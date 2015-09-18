@@ -3,6 +3,7 @@
 define(function (require) {
     var ko = require('knockout');
     var sammy = require('sammy');
+    var sandbox = require('sandbox');
     require('bootstrap');
 
     var AppViewModel = function () {
@@ -22,6 +23,19 @@ define(function (require) {
 
     // override this function so that Sammy doesn't mess with forms
     app._checkFormSubmission = function() { return false; };
+
+    // Override swap function for post-actions and transitions
+    app.swap = function(content, callback) {
+        
+        // reset all pub/sub
+        sandbox.msg.reset();
+
+        // replace html
+        app.$element().html(content);
+
+        // apply callback
+        if (callback) { callback.apply(); }
+    };
 
     // run app
     $(function() { 
