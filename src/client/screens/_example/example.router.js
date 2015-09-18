@@ -9,10 +9,16 @@ define(function (require) {
         
         app.get('/#/', function (context) {
             require(['text!screens/_example/example.html'], function (template) {
-                context.swap(sandbox.util.template(template));
+                var exampleViewModel = new ExampleViewModel();
 
+                // render partial view
+                context.swap(sandbox.util.template(template));
+                
                 // apply ko bindings
-                ko.applyBindings(new ExampleViewModel(), document.getElementById('Example'));
+                ko.applyBindings(exampleViewModel, document.getElementById('Example'));
+
+                // initialize view model
+                exampleViewModel.init();
             });
         });
 

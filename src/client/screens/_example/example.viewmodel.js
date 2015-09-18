@@ -1,10 +1,14 @@
 'use strict';
 
 define(function (require) {
-    var ko = require('knockout');
+    var inputWidget = require('input.widget');
 
     var ExampleViewModel = function () {
-        this.observableA = ko.observable(true);
+        
+    };
+
+    ExampleViewModel.prototype.init = function init () {
+        inputWidget.create('#SampleInput');
     };
 
     return ExampleViewModel;

@@ -7,6 +7,10 @@ require.config({
         'example.router'                : 'screens/_example/example.router',
         'example.viewmodel'             : 'screens/_example/example.viewmodel',
 
+        'base-widget.viewmodel'         : 'widgets/core/base/base-widget.viewmodel',
+
+        'input.viewmodel'               : 'widgets/core/input/input.viewmodel',
+        'input.widget'                  : 'widgets/core/input/input',
         
         // --------------------------------- PLATFORM --------------------------------------
         // Core
