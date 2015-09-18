@@ -1,0 +1,20 @@
+{
+  "name": "ulysses",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hhuynhlam/ulysses",
+  "authors": [
+    "Hai Huynhlam <hhuynhlam@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/client/vendor/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "2.1.20"
+  }
+}
