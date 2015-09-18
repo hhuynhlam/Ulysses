@@ -1,6 +1,5 @@
 require.config({
     baseUrl: '',
-    glob: '/src/client/screens/',
     paths: {
 
         // -------------------------------- GENERATOR --------------------------------------
