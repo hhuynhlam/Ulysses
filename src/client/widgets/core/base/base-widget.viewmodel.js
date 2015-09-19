@@ -7,8 +7,8 @@ define(function (require) {
     var _ = sandbox.util;
 
     var BaseWidgetViewModel = function (options) {
-        this.contextId = options.id;
-        this.$selector = $('#' + options.id);
+        this.contextId = (options) ? options.id : undefined;
+        this.$selector = (options) ? $('#' + options.id) : undefined;
 
         this.subscriptions = [];
     };

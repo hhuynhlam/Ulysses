@@ -52,6 +52,7 @@ define(function (require) {
                     id: 'TestInput',
                     publish: ['TestPublishTopic1', 'TestPublishTopic2']
                 });
+                inputViewModel.init();
             });
 
             it('can publish value to topics', function () {
@@ -78,6 +79,7 @@ define(function (require) {
                     id: 'TestInput',
                     publish: function (val) { observable(val); }
                 });
+                inputViewModel.init();
             });
 
             it('can publish to function', function () {
@@ -94,6 +96,7 @@ define(function (require) {
                     id: 'TestInput',
                     subscribe: ['TestTopicA', 'TestTopicB']
                 });
+                inputViewModel.init();
 
                 ko.postbox.publish('TestTopicA', 'newValueA');
                 expect( inputViewModel.value() ).toBe('newValueA');
@@ -111,11 +114,12 @@ define(function (require) {
                     id: 'TestInput',
                     subscribe: ['TestTopicA']
                 });
+                inputViewModel.init();
 
                 expect( inputViewModel.value() ).toBe('newValueA');
             });
 
         });
-        
+
     });
 });

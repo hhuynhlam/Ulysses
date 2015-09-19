@@ -11,14 +11,6 @@ define(function (require) {
             expect(typeof dropDownViewModel).toBe('object');
             expect(typeof dropDownViewModel.init).toBe('function');
         });
-
-        describe('/ after instantiated', function () {
-            var dropDownViewModel;
-
-            beforeEach(function () {
-                dropDownViewModel = new DropDownViewModel();
-            });
-        });
         
     });
 });
