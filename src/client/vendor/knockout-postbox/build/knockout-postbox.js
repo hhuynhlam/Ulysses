@@ -30,8 +30,6 @@
     exports.publish = function(topic, value) {
         if (topic) {
 
-            console.info('ko publish:', topic, '(', value, ')');
-
             //keep the value and a serialized version for comparison
             exports.topicCache[topic] = {
                 value: value,
@@ -47,8 +45,6 @@
         var subscription, current, existingDispose;
 
         if (topic) {
-
-            console.info('ko subscribe: ', topic);
 
             if (typeof target === "boolean") {
                 initializeWithLatestValue = target;
