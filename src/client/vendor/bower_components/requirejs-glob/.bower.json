@@ -1,0 +1,19 @@
+{
+  "name": "requirejs-glob",
+  "main": "lib/glob.js",
+  "version": "0.1.2",
+  "ignore": [
+    "lib/requirejs-glob",
+    "package.json"
+  ],
+  "homepage": "https://github.com/OpenWebStack/requirejs-glob",
+  "_release": "0.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.2",
+    "commit": "fb57bfd96ce736bf065579c0cf81aea90c3c0171"
+  },
+  "_source": "git://github.com/OpenWebStack/requirejs-glob.git",
+  "_target": "0.1.2",
+  "_originalSource": "requirejs-glob"
+}
