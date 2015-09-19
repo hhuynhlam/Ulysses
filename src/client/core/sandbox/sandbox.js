@@ -5,7 +5,7 @@ define(function (require) {
     var util = require('core/sandbox/util/util');
 
     return {
-        ms: msg,
+        msg: msg,
         util: util
     };
     

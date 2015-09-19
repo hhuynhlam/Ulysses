@@ -10,9 +10,10 @@ define(function (require) {
 
     var inputViewModel = {
         
-        create: function (selector) {
+        create: function (options) {
+            var selector = '#' + options.id;
             $(selector).html( sandbox.util.template(InputTemplate) );
-            ko.applyBindings(new InputViewModel(), $(selector)[0]);
+            ko.applyBindings(new InputViewModel(options), $(selector)[0]);
         }
     
     };

@@ -8,7 +8,11 @@ define(function (require) {
     };
 
     ExampleViewModel.prototype.init = function init () {
-        inputWidget.create('#SampleInput');
+        inputWidget.create({
+            id: 'SampleInput',
+            publish: [],
+            subscribe: []
+        });
     };
 
     return ExampleViewModel;
