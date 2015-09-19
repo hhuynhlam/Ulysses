@@ -9,6 +9,9 @@ require.config({
 
         'base-widget.viewmodel'         : 'widgets/core/base/base-widget.viewmodel',
 
+        'dropdown.viewmodel'            : 'widgets/core/dropdown/dropdown.viewmodel',
+        'dropdown.widget'               : 'widgets/core/dropdown/dropdown',
+
         'input.viewmodel'               : 'widgets/core/input/input.viewmodel',
         'input.widget'                  : 'widgets/core/input/input',
         
@@ -22,7 +25,8 @@ require.config({
         'jquery'                        : 'vendor/bower_components/jquery/dist/jquery.min',
         'k'                             : 'vendor/bower_components/kendo/js',
         'knockout'                      : 'vendor/bower_components/knockout/dist/knockout',
-        'knockout-postbox'              : 'vendor/bower_components/knockout-postbox/build/knockout-postbox.min',
+        // 'knockout-postbox'              : 'vendor/bower_components/knockout-postbox/build/knockout-postbox.min',
+        'knockout-postbox'              : 'vendor/bower_components/knockout-postbox/build/knockout-postbox',
         'lodash'                        : 'vendor/bower_components/lodash/lodash.min',
         'moment'                        : 'vendor/bower_components/moment/min/moment.min',
         'q'                             : 'vendor/bower_components/q/q',

@@ -21,7 +21,6 @@ define(function (require) {
     InputViewModel.prototype.setupPublications = function setupPublications() {
         if (this.options.publish)  {
             
-            // onChange
             this.value.subscribe(function (val) {
                 
                 if (typeof this.options.publish === 'function') {

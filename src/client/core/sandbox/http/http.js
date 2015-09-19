@@ -2,7 +2,7 @@
 
 define(function (require) {
     var $ = require('jquery');
-    var q = require('Q');
+    var q = require('q');
 
     var http = {
         

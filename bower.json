@@ -22,10 +22,10 @@
     "knockout-postbox": "0.5.2",
     "lodash": "3.10.1",
     "moment": "2.10.6",
-    "q": "2.0.2",
+    "q": "1.0.1",
     "requirejs": "2.1.20",
     "requirejs-glob": "0.1.2",
     "requirejs-plugins": "1.0.3",
-    "sammy": "0.7.6",
+    "sammy": "0.7.6"
   }
 }
