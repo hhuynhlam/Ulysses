@@ -19,14 +19,13 @@ define(function (require) {
                     read: 'http://jsonplaceholder.typicode.com/users' 
                 }
             }, 
-            change: ['ChangeTopicA'],
-            close: ['CloseTopicA'],
-            dataBound: ['DataBoundTopicA'],
-            filtering: ['FilteringTopicA'],
-            open: ['OpenTopicA'],
-            select: ['SelectTopicA'],
+            // change: ['ChangeTopicA'],
+            // close: ['CloseTopicA'],
+            // dataBound: ['DataBoundTopicA'],
+            // filtering: ['FilteringTopicA'],
+            // open: ['OpenTopicA'],
+            // select: ['SelectTopicA'],
             cascade: ['CascadeTopicA'],
-
             subscribe: ['DropDownTopicB']
         });
 

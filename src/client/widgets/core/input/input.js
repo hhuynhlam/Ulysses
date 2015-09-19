@@ -11,9 +11,13 @@ define(function (require) {
     var inputViewModel = {
         
         create: function (options) {
-            var selector = '#' + options.id;
-            $(selector).html( sandbox.util.template(InputTemplate) );
-            ko.applyBindings(new InputViewModel(options), $(selector)[0]);
+            var $selector = $('#' + options.id),
+                _viewmodel = new InputViewModel(options);
+
+            $selector.html( sandbox.util.template(InputTemplate) );
+            ko.applyBindings(_viewmodel, $selector[0]);
+            
+            _viewmodel.init();
         }
     
     };

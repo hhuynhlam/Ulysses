@@ -9,8 +9,6 @@ define(function (require) {
 
         this.isVisible = ko.observable(true);
         this.value = ko.observable('Placeholder');
-
-        this.init();
     };
 
     InputViewModel.prototype.init = function init() {

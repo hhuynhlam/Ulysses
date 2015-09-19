@@ -15,8 +15,6 @@ define(function (require) {
         this.$selector = $('#' + options.id);
         
         this.value = ko.observable();
-
-        this.init();
     };
 
     DropDownViewModel.prototype.init = function init() {
@@ -26,6 +24,7 @@ define(function (require) {
 
     DropDownViewModel.prototype.setOptions = function setOptions() {
         this.setupPublications();
+        this.setupSubscriptions();
     };
 
     DropDownViewModel.prototype.setupPublications = function setupPublications() {
@@ -38,8 +37,8 @@ define(function (require) {
             if ( _.includes(_supportedEvents, key) && _.isArray(val) ) {
                 _topics = val;
 
-                _on = function () {
-                    var _val = this.value();   
+                _on = function (e) {
+                    var _val = e.sender.value();   
                     _topics.forEach(function (topic) {
                         msg.publish(topic, _val);
                     });
@@ -48,6 +47,48 @@ define(function (require) {
                 _this.options[key] = _on;
             }
         });
+    };
+
+    DropDownViewModel.prototype.setupSubscriptions = function setupSubscriptions() {
+        var _this = this,
+            _dataBoundOption, _onDataBound;
+
+        _this.subscriptions = [];
+
+        if (_this.options.subscribe && _.isArray(_this.options.subscribe)) {
+            _onDataBound = function (e) {
+                var _topics = _this.options.subscribe, 
+                    _subscription;
+
+                // dispose any existing subscriptions
+                msg.dispose.apply(_this, _this.subscriptions);
+                
+                _topics.forEach(function (topic) {
+
+                    // create new subscriptions
+                    _subscription = msg.subscribe(topic, function (val) {
+                        e.sender.value(val);
+                    }, _this, true);
+
+                    // track subscriptions
+                    _this.subscriptions.push(_subscription);
+                });
+            };
+
+            // extend exisiting dataBound event
+            if (typeof _this.options.dataBound === 'function') {
+                _dataBoundOption = _this.options.dataBound;
+                _this.options.dataBound = function (e) {
+                    _dataBoundOption(e);
+                    _onDataBound(e);
+                };
+
+            // replace dataBound event
+            } else {
+                _this.options.dataBound = _onDataBound;
+            }
+            
+        }
     };
 
     return DropDownViewModel;
