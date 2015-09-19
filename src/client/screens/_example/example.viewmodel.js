@@ -14,14 +14,19 @@ define(function (require) {
             id: 'SampleDropDown',
             dataTextField: 'name',
             dataValueField: 'id',
-            // dataSource: [
-            //     { text: 'Patrick Willis', value: 52 },
-            //     { text: 'Navarro Bowman', value: 53 },
-            //     { text: 'Aldon Smith', value: 99 },
-            //     { text: 'Ahmad Brooks', value: 0 }
-            // ]
-            remote: 'http://jsonplaceholder.typicode.com/users', 
-            cascade: ['DropDownTopicA'],
+            dataSource: { 
+                transport: { 
+                    read: 'http://jsonplaceholder.typicode.com/users' 
+                }
+            }, 
+            change: ['ChangeTopicA'],
+            close: ['CloseTopicA'],
+            dataBound: ['DataBoundTopicA'],
+            filtering: ['FilteringTopicA'],
+            open: ['OpenTopicA'],
+            select: ['SelectTopicA'],
+            cascade: ['CascadeTopicA'],
+
             subscribe: ['DropDownTopicB']
         });
 

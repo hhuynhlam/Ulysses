@@ -3,7 +3,10 @@
 define(function (require) {
     var $ = require('jquery');
     var ko = require('knockout');
+
     var sandbox = require('sandbox');
+    var msg = sandbox.msg;
+    var _ = sandbox.util;
 
     require('k/kendo.dropdownlist.min');
 
@@ -22,36 +25,29 @@ define(function (require) {
     };
 
     DropDownViewModel.prototype.setOptions = function setOptions() {
-        if (this.options.remote && !this.options.dataSource) {
-            this.options.dataSource = {
-                transport: {
-                    read: {
-                        dataType: 'json',
-                        url: this.options.remote,
-                    }
-                }
-            };
-        }
-
         this.setupPublications();
     };
 
     DropDownViewModel.prototype.setupPublications = function setupPublications() {
         var _this = this,
-            _onChange, _topics;
+            _supportedEvents = ['change', 'close', 'dataBound', 'filtering', 'open', 'select', 'cascade'];
 
-        if ( _this.options.cascade && sandbox.util.isArray(_this.options.cascade) )  {
-            _topics = _this.options.cascade;
+        _.forOwn(_this.options, function (val, key) {
+            var _on, _topics;
 
-            _onChange = function () {
-                var val = this.value();   
-                _topics.forEach(function (topic) {
-                    sandbox.msg.publish(topic, val);
-                });
-            };
+            if ( _.includes(_supportedEvents, key) && _.isArray(val) ) {
+                _topics = val;
 
-            _this.options.cascade = _onChange;
-        }
+                _on = function () {
+                    var _val = this.value();   
+                    _topics.forEach(function (topic) {
+                        msg.publish(topic, _val);
+                    });
+                };
+
+                _this.options[key] = _on;
+            }
+        });
     };
 
     return DropDownViewModel;
