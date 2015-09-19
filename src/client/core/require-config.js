@@ -20,29 +20,29 @@ require.config({
         'sandbox'                       : 'core/sandbox/sandbox',
 
         // Vendor
-        'bootstrap'                     : 'vendor/bower_components/bootstrap/dist/js/bootstrap.min',
-        'cookie'                        : 'vendor/bower_components/js-cookie/src/js.cookie',
-        'jquery'                        : 'vendor/bower_components/jquery/dist/jquery.min',
-        'k'                             : 'vendor/bower_components/kendo/js',
-        'knockout'                      : 'vendor/bower_components/knockout/dist/knockout',
-        // 'knockout-postbox'              : 'vendor/bower_components/knockout-postbox/build/knockout-postbox.min',
-        'knockout-postbox'              : 'vendor/bower_components/knockout-postbox/build/knockout-postbox',
-        'lodash'                        : 'vendor/bower_components/lodash/lodash.min',
-        'moment'                        : 'vendor/bower_components/moment/min/moment.min',
-        'q'                             : 'vendor/bower_components/q/q',
-        'sammy'                         : 'vendor/bower_components/sammy/lib/min/sammy-0.7.6.min',
+        'bootstrap'                     : 'vendor/bootstrap/dist/js/bootstrap.min',
+        'cookie'                        : 'vendor/js-cookie/src/js.cookie',
+        'jquery'                        : 'vendor/jquery/dist/jquery.min',
+        'k'                             : 'vendor/kendo/js',
+        'knockout'                      : 'vendor/knockout/dist/knockout',
+        // 'knockout-postbox'              : 'vendor/knockout-postbox/build/knockout-postbox.min',
+        'knockout-postbox'              : 'vendor/knockout-postbox/build/knockout-postbox',
+        'lodash'                        : 'vendor/lodash/lodash.min',
+        'moment'                        : 'vendor/moment/min/moment.min',
+        'q'                             : 'vendor/q/q',
+        'sammy'                         : 'vendor/sammy/lib/min/sammy-0.7.6.min',
 
         // RequireJS Plugins
-        'async'                         : 'vendor/bower_components/requirejs-plugins/src/async',
-        'font'                          : 'vendor/bower_components/requirejs-plugins/src/font',
-        'goog'                          : 'vendor/bower_components/requirejs-plugins/src/goog',
-        'image'                         : 'vendor/bower_components/requirejs-plugins/src/image',
-        'json'                          : 'vendor/bower_components/requirejs-plugins/src/json',
-        'markdownConverter'             : 'vendor/bower_components/requirejs-plugins/lib/Markdown.Converter',
-        'mdown'                         : 'vendor/bower_components/requirejs-plugins/src/mdown',
-        'noext'                         : 'vendor/bower_components/requirejs-plugins/src/noext',
-        'propertyParser'                : 'vendor/bower_components/requirejs-plugins/src/propertyParser',
-        'text'                          : 'vendor/bower_components/requirejs-plugins/lib//text'
+        'async'                         : 'vendor/requirejs-plugins/src/async',
+        'font'                          : 'vendor/requirejs-plugins/src/font',
+        'goog'                          : 'vendor/requirejs-plugins/src/goog',
+        'image'                         : 'vendor/requirejs-plugins/src/image',
+        'json'                          : 'vendor/requirejs-plugins/src/json',
+        'markdownConverter'             : 'vendor/requirejs-plugins/lib/Markdown.Converter',
+        'mdown'                         : 'vendor/requirejs-plugins/src/mdown',
+        'noext'                         : 'vendor/requirejs-plugins/src/noext',
+        'propertyParser'                : 'vendor/requirejs-plugins/src/propertyParser',
+        'text'                          : 'vendor/requirejs-plugins/lib//text'
     },
     
     shim: {
@@ -54,7 +54,7 @@ require.config({
 
     map: {
         '*': {
-            'css'                       : 'vendor/bower_components/require-css/css.min',   // RequireJS CSS Plugin
+            'css'                       : 'vendor/require-css/css.min',   // RequireJS CSS Plugin
             'kendo'                     : 'k/kendo.core.min'
         }
     }
