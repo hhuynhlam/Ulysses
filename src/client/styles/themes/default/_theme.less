@@ -19,7 +19,6 @@
 .btn-warning,
 .btn-danger {
   border-radius: 0;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
   @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
   .box-shadow(@shadow);
 
@@ -34,42 +33,6 @@
   fieldset[disabled] & {
     .box-shadow(none);
   }
-
-  .badge {
-    text-shadow: none;
-  }
-}
-
-// Mixin for generating new styles
-.btn-styles(@btn-color: #555) {
-  background-color: @btn-color;
-  border-color: darken(@btn-color, 14%);
-
-  &:hover,
-  &:focus  {
-    background-color: darken(@btn-color, 12%);
-    background-position: 0 -15px;
-  }
-
-  &:active,
-  &.active {
-    background-color: darken(@btn-color, 12%);
-    border-color: darken(@btn-color, 14%);
-  }
-
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &,
-    &:hover,
-    &:focus,
-    &.focus,
-    &:active,
-    &.active {
-      background-color: darken(@btn-color, 12%);
-      background-image: none;
-    }
-  }
 }
 
 // Common styles
@@ -81,28 +44,66 @@
   }
 }
 
-// Apply the mixin to the buttons
-.btn-default { .btn-styles(@btn-default-bg); text-shadow: 0 1px 0 #fff; border-color: #ccc; }
-.btn-primary { .btn-styles(@btn-primary-bg); }
-.btn-success { .btn-styles(@btn-success-bg); }
-.btn-info    { .btn-styles(@btn-info-bg); }
-.btn-warning { .btn-styles(@btn-warning-bg); }
-.btn-danger  { .btn-styles(@btn-danger-bg); }
+.btn-link {
+  color: @link-color;
+}
+
+.btn-link {
+  color: @link-color;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: @btn-link-disabled-color;
+    }
+  }
+}
+
+.btn-default    { .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border); }
+.btn-primary    { .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border); }
+.btn-success    { .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border); }
+.btn-info       { .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border); }
+.btn-warning    { .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border); }
+.btn-danger     { .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border); }
 
 
 //
-// Images
+// Alerts
 // --------------------------------------------------
 
-.thumbnail,
-.img-thumbnail {
-  .box-shadow(0 1px 2px rgba(0,0,0,.075));
+// Common styles
+.alert {
+  border-radius: 0;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2);
+  @shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 2px rgba(0,0,0,.05);
+  .box-shadow(@shadow);
 }
+
+// Apply the mixin to the alerts
+.alert-success    { .alert-variant(@alert-success-bg, @alert-success-border, @alert-success-text); }
+.alert-info       { .alert-variant(@alert-info-bg, @alert-info-border, @alert-info-text); }
+.alert-warning    { .alert-variant(@alert-warning-bg, @alert-warning-border, @alert-warning-text); }
+.alert-danger     { .alert-variant(@alert-danger-bg, @alert-danger-border, @alert-danger-text); }
 
 
 //
 // Dropdowns
 // --------------------------------------------------
+
+.dropdown-menu {
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.dropdown-menu > li > a {
+    padding: 7px 20px;
+}
 
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
@@ -112,6 +113,54 @@
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   background-color: darken(@dropdown-link-active-bg, 5%);
+}
+
+
+//
+// Form
+// --------------------------------------------------
+
+.form-control {
+    border-radius: 0;
+    
+    &:focus {
+        border-color: @brand-primary;
+        @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@brand-primary, 20%);
+        .box-shadow(@shadow);
+    }
+}
+
+.form-horizontal {
+
+    // Consistent vertical alignment of radios and checkboxes
+    //
+    // Labels also get some reset styles, but that is scoped to a media query below.
+    .radio,
+    .checkbox,
+    .radio-inline,
+    .checkbox-inline {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 10px; // Default padding plus a border
+        padding-bottom: 10px;
+    }
+}
+
+.has-success { .form-control-validation(@state-success-text; @state-success-text; @state-success-bg); }
+.has-warning { .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg); }
+.has-error { .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg); }
+
+.input-group-addon {
+    border-radius: 0;
+}
+
+//
+// Images
+// --------------------------------------------------
+
+.thumbnail,
+.img-thumbnail {
+  .box-shadow(0 1px 2px rgba(0,0,0,.075));
 }
 
 
@@ -173,56 +222,17 @@
   }
 }
 
-
-//
-// Alerts
-// --------------------------------------------------
-
-// Common styles
-.alert {
-  text-shadow: 0 1px 0 rgba(255,255,255,.2);
-  @shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 2px rgba(0,0,0,.05);
-  .box-shadow(@shadow);
-}
-
-// Mixin for generating new styles
-.alert-styles(@color) {
-  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 7.5%));
-  border-color: darken(@color, 15%);
-}
-
-// Apply the mixin to the alerts
-.alert-success    { .alert-styles(@alert-success-bg); }
-.alert-info       { .alert-styles(@alert-info-bg); }
-.alert-warning    { .alert-styles(@alert-warning-bg); }
-.alert-danger     { .alert-styles(@alert-danger-bg); }
-
-
-//
-// Progress bars
-// --------------------------------------------------
-
-// Give the progress background some depth
-.progress {
-  #gradient > .vertical(@start-color: darken(@progress-bg, 4%); @end-color: @progress-bg)
-}
-
-// Mixin for generating new styles
-.progress-bar-styles(@color) {
-  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 10%));
-}
-
-// Apply the mixin to the progress bars
-.progress-bar            { .progress-bar-styles(@progress-bar-bg); }
-.progress-bar-success    { .progress-bar-styles(@progress-bar-success-bg); }
-.progress-bar-info       { .progress-bar-styles(@progress-bar-info-bg); }
-.progress-bar-warning    { .progress-bar-styles(@progress-bar-warning-bg); }
-.progress-bar-danger     { .progress-bar-styles(@progress-bar-danger-bg); }
-
-// Reset the striped class because our mixins don't do multiple gradients and
-// the above custom styles override the new `.progress-bar-striped` in v3.2.0.
-.progress-bar-striped {
-  #gradient > .striped();
+.nav {
+    
+    // Open dropdowns
+    .open > a {
+        &,
+        &:hover,
+        &:focus {
+            background-color: @btn-default-bg;
+            border-color: @btn-default-border;
+        }
+    }
 }
 
 
@@ -257,21 +267,78 @@
   .box-shadow(0 1px 2px rgba(0,0,0,.05));
 }
 
-.panel-primary, .panel-primary > .panel-heading { border-color: #ddd; }
+.panel-default  { .panel-variant(@panel-default-border; @panel-default-text; @panel-default-heading-bg; @panel-default-border); }
+.panel-primary  { .panel-variant(@panel-primary-border; @panel-primary-text; @panel-primary-heading-bg; @panel-primary-border); }
+.panel-success  { .panel-variant(@panel-success-border; @panel-success-text; @panel-success-heading-bg; @panel-success-border); }
+.panel-info     { .panel-variant(@panel-info-border; @panel-info-text; @panel-info-heading-bg; @panel-info-border); }
+.panel-warning  { .panel-variant(@panel-warning-border; @panel-warning-text; @panel-warning-heading-bg; @panel-warning-border); }
+.panel-danger   { .panel-variant(@panel-danger-border; @panel-danger-text; @panel-danger-heading-bg; @panel-danger-border); }
 
-// Mixin for generating new styles
-.panel-heading-styles(@color) {
-  .border-top-radius(0);
-  background-color: @color; 
+.panel-primary, 
+.panel.panel-default-border, 
+.panel-primary > .panel-heading { border-color: #ddd; }
+
+.panel > .panel-heading { .border-top-radius(0); }
+
+
+//
+// Progress bars
+// --------------------------------------------------
+
+// Give the progress background some depth
+.progress {
+  #gradient > .vertical(@start-color: darken(@progress-bg, 4%); @end-color: @progress-bg);
+  border-radius: 0;
 }
 
-// Apply the mixin to the panel headings only
-.panel-default > .panel-heading   { .panel-heading-styles(@panel-default-heading-bg); }
-.panel-primary > .panel-heading   { .panel-heading-styles(@panel-primary-heading-bg); }
-.panel-success > .panel-heading   { .panel-heading-styles(@panel-success-heading-bg); }
-.panel-info > .panel-heading      { .panel-heading-styles(@panel-info-heading-bg); }
-.panel-warning > .panel-heading   { .panel-heading-styles(@panel-warning-heading-bg); }
-.panel-danger > .panel-heading    { .panel-heading-styles(@panel-danger-heading-bg); }
+// Mixin for generating new styles
+.progress-bar-styles(@color) {
+  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 10%));
+}
+
+// Apply the mixin to the progress bars
+.progress-bar            { .progress-bar-styles(@progress-bar-bg); }
+.progress-bar-success    { .progress-bar-styles(@progress-bar-success-bg); }
+.progress-bar-info       { .progress-bar-styles(@progress-bar-info-bg); }
+.progress-bar-warning    { .progress-bar-styles(@progress-bar-warning-bg); }
+.progress-bar-danger     { .progress-bar-styles(@progress-bar-danger-bg); }
+
+// Reset the striped class because our mixins don't do multiple gradients and
+// the above custom styles override the new `.progress-bar-striped` in v3.2.0.
+.progress-bar-striped {
+  #gradient > .striped();
+}
+
+
+//
+// Tables
+// --------------------------------------------------
+
+.table-row-variant(active; @table-bg-active);
+.table-row-variant(success; @state-success-bg);
+.table-row-variant(info; @state-info-bg);
+.table-row-variant(warning; @state-warning-bg);
+.table-row-variant(danger; @state-danger-bg);
+
+
+//
+// Text
+// --------------------------------------------------
+
+a {
+  color: @link-color;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+  }
+}
+
+.text-primary   { .text-emphasis-variant(@brand-primary); }
+.text-success   { .text-emphasis-variant(@state-success-text); }
+.text-info      { .text-emphasis-variant(@state-info-text); }
+.text-warning   { .text-emphasis-variant(@state-warning-text); }
+.text-danger    { .text-emphasis-variant(@state-danger-text); }
 
 
 //

@@ -151,7 +151,7 @@ section#StyleGuideBootstrap
                   li Adds Bullets to Page
             hr
             pre.
-              \nfunction preFormatting() {  // looks like this;  var something = somethingElse;  return true;}                  
+              A block of code is wrapped in pre tags               
     
     // Forms
     #forms.panel.panel-default
@@ -176,15 +176,6 @@ section#StyleGuideBootstrap
                 input(type='checkbox')
                 | Check me out
             button.btn.btn-default(type='submit') Submit
-        hr
-        form.form-inline
-          input.form-control(type='text', placeholder='Email', style='width: 200px;')
-          input.form-control(type='password', placeholder='Password', style='width: 200px;')
-          .checkbox
-            label
-              input(type='checkbox')
-              | Remember me
-          button.btn.btn-default(type='submit') Sign in
         hr
         form.form-horizontal
           .form-group
@@ -232,7 +223,6 @@ section#StyleGuideBootstrap
               button.btn.btn-info(type='button') Info
               // Indicates caution should be taken with this action
               button.btn.btn-warning(type='button') Warning
-              br
               // Indicates a dangerous or potentially negative action
               button.btn.btn-danger(type='button') Danger
               br
@@ -288,7 +278,7 @@ section#StyleGuideBootstrap
           .panel-body
             .input-group
               span.input-group-btn
-                button.btn.btn-default(type='button') Go!
+                button.btn.btn-primary(type='button') Go!
               input.form-control(type='text', placeholder='Username')
             br
             .input-group
@@ -303,30 +293,30 @@ section#StyleGuideBootstrap
     .row
       .col-lg-6
         
-        // Navs
-        #navs.panel.panel-default
-          .panel-heading
-            | Navs
-          .panel-body.clearfix
-            ul.nav.nav-tabs
-              li.active
-                a(href='#') Home
-              li
-                a(href='#') About
-            p
-            p
-            ul.nav.nav-pills
-              li.active
-                a(href='#') Home
-              li
-                a(href='#') About
-            p
-            p
-            ul.nav.nav-stacked.nav-pills
-              li.active
-                a(href='#') Home
-              li
-                a(href='#') About
+        //- // Navs
+        //- #navs.panel.panel-default
+        //-   .panel-heading
+        //-     | Navs
+        //-   .panel-body.clearfix
+        //-     ul.nav.nav-tabs
+        //-       li.active
+        //-         a(href='#') Home
+        //-       li
+        //-         a(href='#') About
+        //-     p
+        //-     p
+        //-     ul.nav.nav-pills
+        //-       li.active
+        //-         a(href='#') Home
+        //-       li
+        //-         a(href='#') About
+        //-     p
+        //-     p
+        //-     ul.nav.nav-stacked.nav-pills
+        //-       li.active
+        //-         a(href='#') Home
+        //-       li
+        //-         a(href='#') About
       
       // Navbar
       #navbar.col-lg-6
@@ -387,45 +377,45 @@ section#StyleGuideBootstrap
     .row
       .col-lg-6
         
-        // Pagination
-        #pagination.panel.panel-default
-          .panel-heading
-            | Pagination
-          .panel-body
-            ul.pagination(style='margin-right: 10px;')
-              li
-                a(href='#') Prev
-              li
-                a(href='#') 1
-              li
-                a(href='#') 2
-              li
-                a(href='#') 3
-              li
-                a(href='#') 4
-              li
-                a(href='#') Next
-            ul.pagination.pagination-lg
-              li
-                a(href='#') Prev
-              li
-                a(href='#') 1
-              li
-                a(href='#') 2
-              li
-                a(href='#') 3
-              li
-                a(href='#') 4
-              li
-                a(href='#') Next
-            ul.pager
-              li
-                a(href='#') Prev
-              li
-                a(href='#') Next
+        //- // Pagination
+        //- #pagination.panel.panel-default
+        //-   .panel-heading
+        //-     | Pagination
+        //-   .panel-body
+        //-     ul.pagination(style='margin-right: 10px;')
+        //-       li
+        //-         a(href='#') Prev
+        //-       li
+        //-         a(href='#') 1
+        //-       li
+        //-         a(href='#') 2
+        //-       li
+        //-         a(href='#') 3
+        //-       li
+        //-         a(href='#') 4
+        //-       li
+        //-         a(href='#') Next
+        //-     ul.pagination.pagination-lg
+        //-       li
+        //-         a(href='#') Prev
+        //-       li
+        //-         a(href='#') 1
+        //-       li
+        //-         a(href='#') 2
+        //-       li
+        //-         a(href='#') 3
+        //-       li
+        //-         a(href='#') 4
+        //-       li
+        //-         a(href='#') Next
+        //-     ul.pager
+        //-       li
+        //-         a(href='#') Prev
+        //-       li
+        //-         a(href='#') Next
         
-        // Labels and Badges
-        #labels.panel.panel-default
+        //- // Labels and Badges
+        //- #labels.panel.panel-default
           .panel-heading
             | Labels and Badges
           .panel-body
@@ -452,7 +442,7 @@ section#StyleGuideBootstrap
             div
               .alert.alert-danger
                 button.close(type='button', data-dismiss='alert') ×
-                strong Oh snap!
+                strong Oh snap! 
                 a.alert-link(href='#') Change a few things up
                 |  and try submitting again.
               .alert.alert-success
@@ -488,7 +478,7 @@ section#StyleGuideBootstrap
           .panel-body
             .progress
               .progress-bar.progress-bar-info(style='width: 20%')
-            .progress.progress-striped.active
+            .progress
               .progress-bar.progress-bar-success(style='width: 40%')
             .progress
               .progress-bar.progress-bar-warning(style='width: 60%')
@@ -505,13 +495,13 @@ section#StyleGuideBootstrap
             p
             .media
               a.pull-left(href='#')
-                img.media-object(src='https://app.divshot.com/img/placeholder-64x64.gif')
+                img.media-object(src='http://placehold.it/64x64')
               .media-body
                 h4.media-heading Media heading
                 p This is the content for your media.
                 .media
                   a.pull-left(href='#')
-                    img.media-object(src='https://app.divshot.com/img/placeholder-64x64.gif')
+                    img.media-object(src='http://placehold.it/64x64')
                   .media-body
                     h4.media-heading Media heading
                     p This is the content for your media.
@@ -550,7 +540,7 @@ section#StyleGuideBootstrap
     // Panels
     .row
       .col-lg-3
-        #panels.panel.panel-primary
+        #panels.panel-default-border.panel.panel-primary
           .panel-heading
             | This is a header
           p.panel-body This is a panel
@@ -638,7 +628,7 @@ section#StyleGuideBootstrap
     .row
       .col-lg-4
         .thumbnail
-          img(data-src='holder.js/300x200', alt='300x200', src='http://placekitten.com/300/200', style='width: 300px; height: 200px;')
+          img(data-src='holder.js/300x200', alt='300x200', src='http://placehold.it/300x200', style='width: 300px; height: 200px;')
           .caption
             h3 Thumbnail label
             p
@@ -648,7 +638,7 @@ section#StyleGuideBootstrap
               a.btn.btn-default(href='#') Button
       .col-lg-4
         .thumbnail
-          img(data-src='holder.js/300x200', alt='300x200', src='http://placekitten.com/300/200', style='width: 300px; height: 200px;')
+          img(data-src='holder.js/300x200', alt='300x200', src='http://placehold.it/300x200', style='width: 300px; height: 200px;')
           .caption
             h3 Thumbnail label
             p
@@ -658,7 +648,7 @@ section#StyleGuideBootstrap
               a.btn.btn-default(href='#') Button
       .col-lg-4
         .thumbnail
-          img(data-src='holder.js/300x200', alt='300x200', src='http://placekitten.com/300/200', style='width: 300px; height: 200px;')
+          img(data-src='holder.js/300x200', alt='300x200', src='http://placehold.it/300x200', style='width: 300px; height: 200px;')
           .caption
             h3 Thumbnail label
             p

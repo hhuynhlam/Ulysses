@@ -15,10 +15,10 @@
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
 @brand-primary:         #df691a;    // orange
-@brand-success:         #5cb85c;    // green
-@brand-info:            #5bc0de;    // light blue
-@brand-warning:         #f0ad4e;    // yellow
-@brand-danger:          #d9534f;    // red
+@brand-success:         #5bc0de;    // light blue
+@brand-info:            #5cb85c;    // green
+@brand-warning:         #d9534f;    // red
+@brand-danger:          #f0ad4e;    // yellow
 
 
 //== Scaffolding
@@ -187,7 +187,7 @@
 
 // Basics of a navbar
 @navbar-height:                    50px;
-@navbar-border-radius:             @border-radius-base;
+@navbar-border-radius:             0;
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #777;
@@ -320,20 +320,20 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:             #3c763d;
-@state-success-bg:               #dff0d8;
+@state-success-text:             darken(@brand-success, 20%);
+@state-success-bg:               lighten(@brand-success, 30%);
 @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
-@state-info-text:                #31708f;
-@state-info-bg:                  #d9edf7;
+@state-info-text:                darken(@brand-info, 20%);
+@state-info-bg:                  lighten(@brand-info, 30%);
 @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
 
-@state-warning-text:             #8a6d3b;
-@state-warning-bg:               #fcf8e3;
+@state-warning-text:             darken(@brand-warning, 20%);
+@state-warning-bg:               lighten(@brand-warning, 30%);
 @state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
 
-@state-danger-text:              #a94442;
-@state-danger-bg:                #f2dede;
+@state-danger-text:              darken(@brand-danger, 20%);
+@state-danger-bg:                lighten(@brand-danger, 30%);
 @state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
 
 
