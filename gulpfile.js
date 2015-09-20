@@ -7,6 +7,7 @@ var less = require('gulp-less');
 var plumber = require('gulp-plumber');
 // var rjs = require('gulp-requirejs');
 var shell = require('gulp-shell');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 //======================================
@@ -34,7 +35,9 @@ gulp.task('jshint', function() {
 gulp.task('less', function () {
     return gulp.src('./src/client/styles/global.less')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(less())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./src/client/styles'));
 });
 
