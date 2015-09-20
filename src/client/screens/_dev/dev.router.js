@@ -12,13 +12,14 @@ define(function (require) {
         // root
         app.get('/#/dev', function (context) {
             require(['text!screens/_dev/_example/example.html'], function (template) {
-                var exampleViewModel = new ExampleViewModel();
+                var dom = document.getElementById('Example'),
+                    exampleViewModel = new ExampleViewModel();
 
                 // render partial view
                 context.swap(sandbox.util.template(template));
                 
                 // apply ko bindings
-                ko.applyBindings(exampleViewModel, document.getElementById('Example'));
+                ko.applyBindings(exampleViewModel, dom);
 
                 // initialize view model
                 exampleViewModel.init();
@@ -27,14 +28,30 @@ define(function (require) {
 
         // style guide
         app.get('/#/dev/styleguide', function (context) {
-            require(['text!screens/_dev/_styleguide/styleguide.html'], function (template) {
+            require(['text!screens/_dev/_styleguide/styleguide.bootstrap.html'], function (template) {
                 var styleGuideViewModel = new StyleGuideViewModel();
 
                 // render partial view
                 context.swap(sandbox.util.template(template));
                 
                 // apply ko bindings
-                ko.applyBindings(styleGuideViewModel, document.getElementById('StyleGuide'));
+                ko.applyBindings(styleGuideViewModel, document.getElementById('StyleGuideBootstrap'));
+
+                // initialize view model
+                styleGuideViewModel.init();
+            });
+        });
+
+        // style guide
+        app.get('/#/dev/styleguide/kendo', function (context) {
+            require(['text!screens/_dev/_styleguide/styleguide.kendo.html'], function (template) {
+                var styleGuideViewModel = new StyleGuideViewModel();
+
+                // render partial view
+                context.swap(sandbox.util.template(template));
+                
+                // apply ko bindings
+                ko.applyBindings(styleGuideViewModel, document.getElementById('StyleGuideKendo'));
 
                 // initialize view model
                 styleGuideViewModel.init();

@@ -45,11 +45,11 @@ gulp.task('less', function () {
 
 gulp.task('jade', function () {
     return gulp.src([
-        './**/*.jade'
+        './src/client/**/*.jade'
     ])
     .pipe(plumber())
     .pipe(jade())
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./src/client'));
 });
 
 

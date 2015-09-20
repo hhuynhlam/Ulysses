@@ -1,0 +1,798 @@
+include styleguide.nav.jade
+
+section#StyleGuideBootstrap
+
+  // start container
+  .container
+    
+    // Jumbotron
+    .jumbotron
+      h1 Bootstrap 3 Style Guide
+      p A quick preview of everything Bootstrap has to offer.
+      p
+        a.btn.btn-primary.btn-large Learn more
+    
+    .row
+      .col-lg-6
+        
+        // Headings
+        #headings.panel.panel-default
+          .panel-heading Headings
+          .panel-body
+            h1.page-header
+              | Page Header 
+              small With Small Text
+            h1 This is an h1 heading
+            h2 This is an h2 heading
+            h3 This is an h3 heading
+            h4 This is an h4 heading
+            h5 This is an h5 heading
+            h6 This is an h6 heading
+        
+        // Tables
+        #tables.panel.panel-default
+          .panel-heading
+            | Tables
+          .panel-body
+            table.table.table-hover
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Tables
+              tbody
+                tr
+                  td 1
+                  td Michael
+                  td Are formatted like this
+                tr
+                  td 2
+                  td Lucille
+                  td Do you like them?
+                tr.success
+                  td 3
+                  td Success
+                  td
+                tr.danger
+                  td 4
+                  td Danger
+                  td
+                tr.warning
+                  td 5
+                  td Warning
+                  td
+                tr.active
+                  td 6
+                  td Active
+                  td
+            table.table.table-striped.table-bordered.table-condensed
+              thead
+                tr
+                  th #
+                  th First Name
+                  th Tables
+              tbody
+                tr
+                  td 1
+                  td Michael
+                  td This one is bordered and condensed
+                tr
+                  td 2
+                  td Lucille
+                  td Do you still like it?
+      
+      
+      .col-lg-6
+
+        // Content Formatting
+        #content-formatting.panel.panel-default
+          .panel-heading
+            | Content Formatting
+          .panel-body
+            p.lead This is a lead paragraph.
+            p
+              | This is an 
+              b ordinary paragraph
+              |  that is 
+              i long enough
+              |  to wrap to 
+              u multiple lines
+              |  so that you can see how the line spacing looks.
+            p.text-muted Muted color paragraph.
+            p.text-warning Warning color paragraph.
+            p.text-danger Danger color paragraph.
+            p.text-info Info color paragraph.
+            p.text-success Success color paragraph.
+            p
+              small
+                | This is text in a 
+                code small
+                |  wrapper. 
+                abbr(title='No Big Deal') NBD
+                | , right?
+            hr
+            address
+              strong Twitter, Inc.
+              br
+              |                 795 Folsom Ave, Suite 600
+              br
+              |                 San Francisco, CA 94107
+              br
+              abbr(title='Phone') P:
+              |  (123) 456-7890
+            address.col-6
+              strong Full Name
+              br
+              a(href='mailto:#') first.last@example.com
+            hr
+            blockquote
+              | Here's what a blockquote looks like in Bootstrap. 
+              small
+                | Use 
+                code small
+                |  to identify the source.
+            hr
+            .row
+              .col-xs-6
+                ul
+                  li Normal Unordered List
+                  li
+                    | Can Also Work
+                    ul
+                      li With Nested Children
+                  li Adds Bullets to Page
+              .col-xs-6
+                ol
+                  li Normal Ordered List
+                  li
+                    | Can Also Work
+                    ol
+                      li With Nested Children
+                  li Adds Bullets to Page
+            hr
+            pre.
+              \nfunction preFormatting() {  // looks like this;  var something = somethingElse;  return true;}                  
+    
+    // Forms
+    #forms.panel.panel-default
+      .panel-heading
+        | Forms
+      .panel-body
+        form
+          fieldset
+            legend Legend
+            .form-group
+              label(for='exampleInputEmail') Email address
+              input#exampleInputEmail.form-control(type='text', placeholder='Enter email')
+            .form-group
+              label(for='exampleInputPassword') Password
+              input#exampleInputPassword.form-control(type='password', placeholder='Password')
+            .form-group
+              label(for='exampleInputFile') File input
+              input#exampleInputFile(type='file')
+              p.help-block Example block-level help text here.
+            .checkbox
+              label
+                input(type='checkbox')
+                | Check me out
+            button.btn.btn-default(type='submit') Submit
+        hr
+        form.form-inline
+          input.form-control(type='text', placeholder='Email', style='width: 200px;')
+          input.form-control(type='password', placeholder='Password', style='width: 200px;')
+          .checkbox
+            label
+              input(type='checkbox')
+              | Remember me
+          button.btn.btn-default(type='submit') Sign in
+        hr
+        form.form-horizontal
+          .form-group
+            label.col-lg-2.control-label(for='inputEmail') Email
+            .col-lg-10
+              input#inputEmail.form-control(type='text', placeholder='Email')
+          .form-group.has-warning
+            label.col-lg-2.control-label(for='inputEmail') Email
+            .col-lg-10
+              input#inputEmail.form-control(type='text', placeholder='Email')
+          .form-group.has-error
+            label.col-lg-2.control-label(for='inputEmail') Email
+            .col-lg-10
+              input#inputEmail.form-control(type='text', placeholder='Email')
+          .form-group.has-success
+            label.col-lg-2.control-label(for='inputEmail') Email
+            .col-lg-10
+              input#inputEmail.form-control(type='text', placeholder='Email')
+          .form-group
+            label.col-lg-2.control-label(for='inputPassword') Password
+            .col-lg-10
+              input#inputPassword.form-control(type='password', placeholder='Password')
+              .checkbox
+                label
+                  input(type='checkbox')
+                  | Remember me
+              button.btn.btn-default(type='submit') Sign in
+    
+    .row
+      .col-lg-6
+        
+        // Buttons
+        #buttons.panel.panel-default
+          .panel-heading
+            | Buttons
+          .panel-body
+            p
+              // Standard gray button with gradient
+              button.btn.btn-default(type='button') Default
+              // Provides extra visual weight and identifies the primary action in a set of buttons
+              button.btn.btn-primary(type='button') Primary
+              // Indicates a successful or positive action
+              button.btn.btn-success(type='button') Success
+              // Contextual button for informational alert messages
+              button.btn.btn-info(type='button') Info
+              // Indicates caution should be taken with this action
+              button.btn.btn-warning(type='button') Warning
+              br
+              // Indicates a dangerous or potentially negative action
+              button.btn.btn-danger(type='button') Danger
+              br
+              // Deemphasize a button by making it look like a link while maintaining button behavior
+              button.btn.btn-link(type='button') Link
+            p
+              button.btn.btn-primary.btn-lg(type='button') Large
+              button.btn.btn-primary.disabled(type='button') Disabled
+              button.btn.btn-primary(type='button') Default
+              button.btn.btn-primary.btn-sm(type='button') Small
+              button.btn.btn-primary.btn-xs(type='button') Extra Small
+      
+      .col-lg-6
+        
+        // Images
+        #images.panel.panel-default
+          .panel-heading
+            | Images
+          .panel-body
+            p
+              img.img-rounded(src='http://placehold.it/120x100')
+              img.img-circle(src='http://placehold.it/120x100')
+              img.img-thumbnail(src='http://placehold.it/120x100')
+    
+    .row
+      .col-lg-3
+        
+        // Dropdowns
+        #dropdowns.panel.panel-default
+          .panel-heading
+            | Dropdowns
+          .panel-body.clearfix
+            .dropdown
+              // Link or button to toggle dropdown
+              ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu', style='display: block; position: static;')
+                li.dropdown-header Dropdown header
+                li.disabled
+                  a(tabindex='-1', href='#') Action
+                li
+                  a(tabindex='-1', href='#') Another action
+                li
+                  a(tabindex='-1', href='#') Something else here
+                li.divider
+                li
+                  a(tabindex='-1', href='#') Separated link
+      
+      .col-lg-9
+        
+        // Input Groups
+        #input-groups.panel.panel-default
+          .panel-heading
+            | Input Groups
+          .panel-body
+            .input-group
+              span.input-group-btn
+                button.btn.btn-default(type='button') Go!
+              input.form-control(type='text', placeholder='Username')
+            br
+            .input-group
+              input.form-control.input-large(type='text')
+              span.input-group-addon.input-large .00
+            br
+            .input-group
+              span.input-group-addon $
+              input.form-control(type='text')
+              span.input-group-addon .00
+    
+    .row
+      .col-lg-6
+        
+        // Navs
+        #navs.panel.panel-default
+          .panel-heading
+            | Navs
+          .panel-body.clearfix
+            ul.nav.nav-tabs
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') About
+            p
+            p
+            ul.nav.nav-pills
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') About
+            p
+            p
+            ul.nav.nav-stacked.nav-pills
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') About
+      
+      // Navbar
+      #navbar.col-lg-6
+        .panel.panel-default
+          .panel-heading
+            | Navbar
+          .panel-body
+            p
+            .navbar.navbar-default
+              .navbar-header
+                a.navbar-brand(href='#') Your Company
+              .navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                  li.active
+                    a(href='#') Home
+                  li
+                    a(href='#') About
+                  li.dropdown
+                    a.border.dropdown-toggle(href='#', data-toggle='dropdown')
+                      | Contact 
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li
+                        a(href='#') Separated link
+            .navbar.navbar-inverse
+              .navbar-header
+                a.navbar-brand(href='#') Your Company
+              .navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                  li.active
+                    a(href='#') Home
+                  li
+                    a(href='#') About
+                  li.dropdown
+                    a.border.dropdown-toggle(href='#', data-toggle='dropdown')
+                      | Contact 
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li
+                        a(href='#') Separated link
+            .navbar
+              .collapse.navbar-collapse
+                a.btn.btn-primary.navbar-btn Navbar Button
+                p.navbar-text.navbar-right Navbar Text
+    
+    .row
+      .col-lg-6
+        
+        // Pagination
+        #pagination.panel.panel-default
+          .panel-heading
+            | Pagination
+          .panel-body
+            ul.pagination(style='margin-right: 10px;')
+              li
+                a(href='#') Prev
+              li
+                a(href='#') 1
+              li
+                a(href='#') 2
+              li
+                a(href='#') 3
+              li
+                a(href='#') 4
+              li
+                a(href='#') Next
+            ul.pagination.pagination-lg
+              li
+                a(href='#') Prev
+              li
+                a(href='#') 1
+              li
+                a(href='#') 2
+              li
+                a(href='#') 3
+              li
+                a(href='#') 4
+              li
+                a(href='#') Next
+            ul.pager
+              li
+                a(href='#') Prev
+              li
+                a(href='#') Next
+        
+        // Labels and Badges
+        #labels.panel.panel-default
+          .panel-heading
+            | Labels and Badges
+          .panel-body
+            h3
+              span.label.label-default Default
+              span.label.label-success Success
+              span.label.label-warning Warning
+              br
+              span.label.label-danger Danger
+              br
+              span.label.label-info Info
+            p.lead
+              a(href='#')
+                | Inbox 
+                span.badge 42
+      
+      .col-lg-6
+        
+        // Alerts
+        #alerts.panel.panel-default
+          .panel-heading
+            | Alerts
+          .panel-body
+            div
+              .alert.alert-danger
+                button.close(type='button', data-dismiss='alert') ×
+                strong Oh snap!
+                a.alert-link(href='#') Change a few things up
+                |  and try submitting again.
+              .alert.alert-success
+                button.close(type='button', data-dismiss='alert') ×
+                strong Well done!
+                |  You successfully read 
+                a.alert-link(href='#') this important alert message
+                | .
+              .alert.alert-warning
+                button.close(type='button', data-dismiss='alert') ×
+                strong Heads up!
+                |  This 
+                a.alert-link(href='#') alert needs your attention
+                | , but it's not super important.
+              .alert.alert-info
+                button.close(type='button', data-dismiss='alert') ×
+                strong Heads up!
+                |  This 
+                a.alert-link(href='#') alert needs your attention
+                | , but it's not super important.
+              .alert
+                button.close(type='button', data-dismiss='alert') ×
+                h4 Warning!
+                p This is a block style alert.
+    
+    .row
+      .col-lg-6
+
+        // Progress Bar
+        #progress.panel.panel-default
+          .panel-heading
+            | Progress Bars
+          .panel-body
+            .progress
+              .progress-bar.progress-bar-info(style='width: 20%')
+            .progress.progress-striped.active
+              .progress-bar.progress-bar-success
+            .progress
+              .progress-bar.progress-bar-warning(style='width: 60%')
+            .progress
+              .progress-bar.progress-bar-danger(style='width: 80%')
+      
+      .col-lg-6
+        
+        // Media Object
+        #media-object.panel.panel-default
+          .panel-heading
+            | Media Object
+          .panel-body
+            p
+            .media
+              a.pull-left(href='#')
+                img.media-object(src='https://app.divshot.com/img/placeholder-64x64.gif')
+              .media-body
+                h4.media-heading Media heading
+                p This is the content for your media.
+                .media
+                  a.pull-left(href='#')
+                    img.media-object(src='https://app.divshot.com/img/placeholder-64x64.gif')
+                  .media-body
+                    h4.media-heading Media heading
+                    p This is the content for your media.
+    
+    // List Group
+    .row
+      .col-lg-4
+        ul.list-group
+          li.list-group-item Cras justo odio
+          li.list-group-item Dapibus ac facilisis in
+          li.list-group-item Morbi leo risus
+          li.list-group-item Porta ac consectetur ac
+          li.list-group-item Vestibulum at eros
+      .col-lg-4
+        .list-group
+          a.list-group-item.active(href='#')           Cras justo odio        
+          a.list-group-item(href='#') Dapibus ac facilisis in        
+          a.list-group-item(href='#') Morbi leo risus        
+          a.list-group-item(href='#') Porta ac consectetur ac        
+          a.list-group-item(href='#') Vestibulum at eros        
+      .col-lg-4
+        .list-group
+          a.list-group-item.active(href='#')
+            h4.list-group-item-heading List group item heading
+            p.list-group-item-text
+              | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+          a.list-group-item(href='#')
+            h4.list-group-item-heading List group item heading
+            p.list-group-item-text
+              | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+          a.list-group-item(href='#')
+            h4.list-group-item-heading List group item heading
+            p.list-group-item-text
+              | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+    
+    // Panels
+    .row
+      .col-lg-3
+        #panels.panel.panel-primary
+          .panel-heading
+            | This is a header
+          p.panel-body This is a panel
+          .panel-footer
+            | This is a footer
+      .col-lg-3
+        .panel.panel-success
+          .panel-heading
+            | This is a header
+          .panel-body This is a panel
+          .panel-footer
+            | This is a footer
+      .col-lg-3
+        .panel.panel-danger
+          .panel-heading
+            | This is a header
+          .panel-body This is a panel
+          .panel-footer
+            | This is a footer
+      .col-lg-3
+        .panel.panel-warning
+          .panel-heading
+            | This is a header
+          .panel-body This is a panel
+          .panel-footer
+            | This is a footer
+    
+    .row
+      .col-lg-3
+        .panel.panel-info
+          .panel-heading
+            | This is a header
+          p.panel-body This is a panel
+          .panel-footer
+            | This is a footer
+      .col-lg-3
+        .panel.panel-default
+          .panel-heading
+            | This is a header
+          .panel-body This is a panel
+          ul.list-group.list-group-flush
+            li.list-group-item First Item
+            li.list-group-item Second Item
+            li.list-group-item Third Item
+          .panel-footer
+            | This is a footer
+      
+      // Wells
+      .col-lg-3
+        #wells.well
+          | Default Well
+        .well.well-small
+          | Small Well
+      .col-lg-3
+        .well.well-large
+          | Large Padding Well
+  hr
+
+  .container
+    
+    // Columns
+    .row
+      .col-lg-4
+        h2 Heading
+        p
+          | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        p
+          a.btn.btn-primary(href='#') View details »
+      .col-lg-4
+        h2 Heading
+        p
+          | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        p
+          a.btn.btn-primary(href='#') View details »
+      .col-lg-4
+        h2 Heading
+        p
+          | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
+        p
+          a.btn.btn-primary(href='#') View details »
+    
+    hr
+    
+    // Thumbnails
+    .row
+      .col-lg-4
+        .thumbnail
+          img(data-src='holder.js/300x200', alt='300x200', src='http://placekitten.com/300/200', style='width: 300px; height: 200px;')
+          .caption
+            h3 Thumbnail label
+            p
+              | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            p
+              a.btn.btn-primary(href='#') Button
+              a.btn.btn-default(href='#') Button
+      .col-lg-4
+        .thumbnail
+          img(data-src='holder.js/300x200', alt='300x200', src='http://placekitten.com/300/200', style='width: 300px; height: 200px;')
+          .caption
+            h3 Thumbnail label
+            p
+              | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            p
+              a.btn.btn-primary(href='#') Button
+              a.btn.btn-default(href='#') Button
+      .col-lg-4
+        .thumbnail
+          img(data-src='holder.js/300x200', alt='300x200', src='http://placekitten.com/300/200', style='width: 300px; height: 200px;')
+          .caption
+            h3 Thumbnail label
+            p
+              | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+            p
+              a.btn.btn-primary(href='#') Button
+              a.btn.btn-default(href='#') Button
+    
+    hr
+    
+    // Tabs
+    ul#myTab.nav.nav-tabs
+      li
+        a(href='#home', data-toggle='tab') Home
+      li.active
+        a(href='#profile', data-toggle='tab') Profile
+      li.dropdown
+        a#myTabDrop1.dropdown-toggle(href='#', data-toggle='dropdown')
+          | Dropdown 
+          b.caret
+        ul.dropdown-menu(role='menu', aria-labelledby='myTabDrop1')
+          li
+            a(href='#dropdown1', tabindex='-1', data-toggle='tab') @fat
+          li
+            a(href='#dropdown2', tabindex='-1', data-toggle='tab') @mdo
+    #myTabContent.tab-content
+      #home.tab-pane.fade
+        p
+          | Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+      #profile.tab-pane.fade.active.in
+        p
+          | Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+      #dropdown1.tab-pane.fade
+        p
+          | Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+      #dropdown2.tab-pane.fade
+        p
+          | Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+    
+    hr
+    
+    // Tooltips
+    .bs-example-tooltips
+      button.btn.btn-default(type='button', data-toggle='tooltip', data-placement='left', title='', data-original-title='Tooltip on left') Tooltip on left
+      button.btn.btn-default(type='button', data-toggle='tooltip', data-placement='top', title='', data-original-title='Tooltip on top') Tooltip on top
+      button.btn.btn-default(type='button', data-toggle='tooltip', data-placement='bottom', title='Tooltip on bottom') Tooltip on bottom
+      button.btn.btn-default(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right') Tooltip on right
+    
+    hr
+    
+    // Popover
+    .bs-popover-example
+      button.btn.btn-default(type='button', data-container='body', data-toggle='popover', data-placement='left', data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.', data-original-title='', title='')
+        | Popover on left
+      button.btn.btn-default(type='button', data-container='body', data-toggle='popover', data-placement='top', data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.', data-original-title='', title='')
+        | Popover on top
+      button.btn.btn-default(type='button', data-container='body', data-toggle='popover', data-placement='bottom', data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.', data-original-title='', title='')
+        | Popover on bottom
+      button.btn.btn-default(type='button', data-container='body', data-toggle='popover', data-placement='right', data-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.', data-original-title='', title='')
+        | Popover on right
+    
+    hr
+    
+    // Accordion
+    #accordion.panel-group
+      .panel
+        .panel-heading
+          h4.panel-title
+            a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
+              | Collapsible Group Item #1
+        #collapseOne.panel-collapse.collapse.in
+          .panel-body
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      .panel
+        .panel-heading
+          h4.panel-title
+            a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
+              | Collapsible Group Item #2
+        #collapseTwo.panel-collapse.collapse
+          .panel-body
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      .panel
+        .panel-heading
+          h4.panel-title
+            a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
+              | Collapsible Group Item #3
+        #collapseThree.panel-collapse.collapse
+          .panel-body
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    
+    hr
+    
+    // Carosel
+    #carousel-example-captions.carousel.slide.bs-docs-carousel-example
+      ol.carousel-indicators
+        li.active(data-target='#carousel-example-captions', data-slide-to='0')
+        li(data-target='#carousel-example-captions', data-slide-to='1')
+        li(data-target='#carousel-example-captions', data-slide-to='2')
+      .carousel-inner
+        .item.active
+          img(data-src='https://placeholdit.imgix.net/~text?txtsize=95&txt=1140%C3%97500&w=1140&h=500', src='https://placeholdit.imgix.net/~text?txtsize=95&txt=1140%C3%97500&w=1140&h=500', alt='First slide image')
+          .carousel-caption
+            h3 First slide label
+            p Nulla vitae elit libero, a pharetra augue mollis interdum.
+        .item
+          img(data-src='https://placeholdit.imgix.net/~text?txtsize=95&txt=1140%C3%97500&w=1140&h=500', src='https://placeholdit.imgix.net/~text?txtsize=95&txt=1140%C3%97500&w=1140&h=500', alt='Second slide image')
+          .carousel-caption
+            h3 Second slide label
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        .item
+          img(data-src='https://placeholdit.imgix.net/~text?txtsize=95&txt=1140%C3%97500&w=1140&h=500', src='https://placeholdit.imgix.net/~text?txtsize=95&txt=1140%C3%97500&w=1140&h=500', alt='Third slide image')
+          .carousel-caption
+            h3 Third slide label
+            p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+      a.left.carousel-control(href='#carousel-example-captions', data-slide='prev')
+        span.icon-prev
+      a.right.carousel-control(href='#carousel-example-captions', data-slide='next')
+        span.icon-next
+    
+    hr
+    
+    // Modal
+    a.btn.btn-primary.btn-lg(data-toggle='modal', href='#myModal') Launch demo modal
+
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4.modal-title Modal title
+          .modal-body
+            img(src='http://placekitten.com/400/400', alt='kitty')
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Save changes
+
+
