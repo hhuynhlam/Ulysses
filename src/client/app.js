@@ -14,7 +14,7 @@ define(function (require) {
     var app = sammy('#MainView');
 
     // routes
-    require('example.router')(app);
+    require('dev.router')(app);
     
     // 404 Error
     app.notFound = function () {

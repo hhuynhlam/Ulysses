@@ -2,11 +2,12 @@ require.config({
     baseUrl: '',
     paths: {
 
-        // -------------------------------- GENERATOR --------------------------------------
-        // Example
-        'example.router'                : 'screens/_example/example.router',
-        'example.viewmodel'             : 'screens/_example/example.viewmodel',
+        // Screens
+        'dev.router'                    : 'screens/_dev/dev.router',
+        'example.viewmodel'             : 'screens/_dev/_example/example.viewmodel',
+        'styleguide.viewmodel'          : 'screens/_dev/_styleguide/styleguide.viewmodel',
 
+        // Widgets
         'base-widget.viewmodel'         : 'widgets/core/base/base-widget.viewmodel',
 
         'dropdown.viewmodel'            : 'widgets/core/dropdown/dropdown.viewmodel',
