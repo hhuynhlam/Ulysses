@@ -5,26 +5,24 @@ define(function (require) {
     var BaseWidgetViewModel = require('base-widget.viewmodel');
     require('k/kendo.dropdownlist.min');
 
-    var DropDownViewModel = function (options) {
+    class DropDownViewModel extends BaseWidgetViewModel {
+      constructor(options) {
+        super(options);
         this.options = options || {};
-        BaseWidgetViewModel.call(this, options);
-        
         this.value = ko.observable();
-    };
-
-    DropDownViewModel.prototype = Object.create(BaseWidgetViewModel.prototype);
-    DropDownViewModel.prototype.constructor = DropDownViewModel;
-
-    DropDownViewModel.prototype.init = function init() {
+      }
+      
+      init() {
         this.setOptions();
         this.$selector.kendoDropDownList(this.options);
-    };
-
-    DropDownViewModel.prototype.setOptions = function setOptions() {
+      }
+      
+      setOptions() {
         var _supportedEvents = ['change', 'close', 'dataBound', 'filtering', 'open', 'select', 'cascade'];
         this.setupPublications(_supportedEvents);
         this.setupSubscriptions();
-    };
+      }
+    }
 
     return DropDownViewModel;
 });

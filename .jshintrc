@@ -17,6 +17,7 @@
     "trailing"      : true,     // Prohibit trailing whitespaces.
     "unused"        : true,
     "jasmine"       : true,
+    "esnext"        : true,
 
     // Libraries
     "jquery"        : true,    // Enable globals exposed by jQuery JavaScript library.
