@@ -43,7 +43,7 @@ require.config({
         'mdown'                         : 'vendor/requirejs-plugins/src/mdown',
         'noext'                         : 'vendor/requirejs-plugins/src/noext',
         'propertyParser'                : 'vendor/requirejs-plugins/src/propertyParser',
-        'text'                          : 'vendor/requirejs-plugins/lib//text'
+        'text'                          : 'vendor/requirejs-plugins/lib/text'
     },
     
     shim: {
