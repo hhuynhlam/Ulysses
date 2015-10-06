@@ -40,6 +40,7 @@
     "gulp-shell": "0.4.2",
     "gulp-sourcemaps": "1.5.2",
     "jshint-stylish": "2.0.0",
+    "jspm": "0.16.11",
     "lodash": "3.10.1"
   }
 }
