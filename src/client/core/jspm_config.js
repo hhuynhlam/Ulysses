@@ -4,10 +4,11 @@ System.config({
   transpiler: "traceur",
   paths: {
     "github:*"    : "vendor/github/*",
-    "license:*"   : "vendor/license/*",
     "npm:*"       : "vendor/npm/*"
   },
-
+  directories: {
+    "license:*"   : "vendor/license/*"
+  },
   map: {
     "bootstrap"      : "github:twbs/bootstrap@3.3.5",
     "jquery"         : "github:components/jquery@2.1.4",
