@@ -6,7 +6,8 @@ System.config({
 
   paths: {
     // Routes
-    "dev.router": "screens/_dev/dev.router",
+    // "dev.router"    : "screens/_dev/dev.router",
+    "home.router"   : "screens/home/home.router",
     
     // Widgets
     "base-widget.viewmodel": "widgets/core/base/base-widget.viewmodel",
