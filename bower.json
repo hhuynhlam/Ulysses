@@ -1,0 +1,32 @@
+{
+  "name": "ulysses",
+  "version": "0.0.2",
+  "homepage": "https://github.com/hhuynhlam/ulysses",
+  "authors": [
+    "Hai Huynhlam <hhuynhlam@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/client/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.5",
+    "jquery": "2.1.4",
+    "knockout": "3.3.0",
+    "knockout-postbox": "0.5.2",
+    "lodash": "3.10.1",
+    "moment": "2.10.6",
+    "plugin-css": "https://github.com/systemjs/plugin-css.git#0.1.18",
+    "plugin-json": "https://github.com/systemjs/plugin-json.git#0.1.0",
+    "plugin-text": "https://github.com/systemjs/plugin-text.git#0.0.2",
+    "sammy": "0.7.6",
+    "system.js": "0.19.3",
+    "traceur": "0.0.91",
+    "traceur-runtime": "0.0.91"
+  }
+}

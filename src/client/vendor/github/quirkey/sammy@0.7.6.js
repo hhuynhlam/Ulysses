@@ -1,1 +1,0 @@
-module.exports = require("github:quirkey/sammy@0.7.6/lib/min/sammy-0.7.6.min");
