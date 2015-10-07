@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var jshint = require('gulp-jshint');
+var Karma = require('karma').Server;
 var less = require('gulp-less');
 var plumber = require('gulp-plumber');
 // var rjs = require('gulp-requirejs');
@@ -72,6 +73,19 @@ gulp.task('jade', function () {
 //     .pipe(gulp.dest('_dist'));
 // });
 
+
+//======================================
+// Test
+//======================================
+
+gulp.task('karma', function(done) {
+    new Karma({
+        configFile: __dirname + '/build/test/karma.conf.js',
+        singleRun: true
+    }, done).start();
+});
+
+
 //======================================
 // Watch
 //======================================
@@ -93,6 +107,6 @@ gulp.task('server', ['less', 'jade'], shell.task([ 'npm start' ]));
 // Primary Tasks
 //======================================
 gulp.task('default', ['jshint', 'less', 'jade']);
-gulp.task('test', ['jshint']);
+gulp.task('test', ['jshint', 'karma']);
 
 

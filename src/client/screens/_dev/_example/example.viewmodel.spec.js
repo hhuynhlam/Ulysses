@@ -1,12 +1,10 @@
 'use strict';
 
-define(function (require) {
-    var ExampleViewModel = require('example.viewmodel');
+import ExampleViewModel from './example.viewmodel';
 
-    describe('ExampleViewModel', function() {
-        it('can be instantiated', function () {
-            var exampleViewModel = new ExampleViewModel();
-            expect(typeof exampleViewModel).toBe('object');
-        });
+describe('ExampleViewModel', function() {
+    it('can be instantiated', function () {
+        var exampleViewModel = new ExampleViewModel();
+        expect(typeof exampleViewModel).toBe('object');
     });
 });
