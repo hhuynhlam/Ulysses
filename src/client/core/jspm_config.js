@@ -3,6 +3,8 @@ System.config({
   defaultJSExtensions: true,
   transpiler: "traceur",
   paths: {
+    "sandbox": "core/sandbox/sandbox",
+
     "github:*": "vendor/github/*",
     "npm:*": "vendor/npm/*"
   },

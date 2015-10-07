@@ -1,14 +1,7 @@
 'use strict';
 
-define(function (require) {
-    var http = require('core/sandbox/http/http');
-    var msg = require('core/sandbox/msg/msg');
-    var util = require('core/sandbox/util/util');
+import * as http from './http/http';
+import * as msg from './msg/msg';
+import * as util from './util/util';
 
-    return {
-        http: http,
-        msg: msg,
-        util: util
-    };
-    
-});
+export { http, msg, util };

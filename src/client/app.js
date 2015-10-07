@@ -3,8 +3,7 @@
 import * as ko from 'knockout';
 import 'bootstrap';
 import * as sammy from 'sammy';
-
-// var sandbox = require('sandbox');
+import * as sandbox from 'sandbox';
 
 var AppViewModel = function () {
     this.isReady = ko.observable(false);
