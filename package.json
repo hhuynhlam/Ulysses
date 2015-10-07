@@ -52,8 +52,10 @@
       "bootstrap": "github:twbs/bootstrap@3.3.5",
       "jquery": "github:components/jquery@2.1.4",
       "knockout": "github:knockout/knockout@3.3.0",
+      "knockout-postbox": "github:rniemeyer/knockout-postbox@0.5.2",
       "lodash": "npm:lodash@3.10.1",
-      "moment": "github:moment/moment@2.10.6"
+      "moment": "github:moment/moment@2.10.6",
+      "sammy": "github:quirkey/sammy@0.7.6"
     },
     "devDependencies": {
       "traceur": "github:jmcriffey/bower-traceur@0.0.91",

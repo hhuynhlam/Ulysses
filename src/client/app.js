@@ -2,8 +2,8 @@
 
 import * as ko from 'knockout';
 import 'bootstrap';
+import * as sammy from 'sammy';
 
-// var sammy = require('sammy');
 // var sandbox = require('sandbox');
 
 var AppViewModel = function () {
