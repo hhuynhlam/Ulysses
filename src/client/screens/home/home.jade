@@ -1,0 +1,74 @@
+section#Home.container-fluid
+
+    //- Jumbotron
+    .intro-header
+        .container
+            .row
+              .col-lg-12
+                .intro-message
+                  h1 Hai Huynhlam              
+                  hr.intro-divider             
+                  h3.hidden-xs Software Engineer                  
+                  ul.list-inline.intro-social-buttons
+                    li
+                      a.btn.btn-default.btn-lg.network-name(href='#portfolio') View My Portfolio                        
+                    li
+                      a.btn.btn-default.btn-lg.network-name(href='http://github.com/hhuynhlam', target='_blank') View My GitHub
+
+    //- About
+    .about
+        .container
+            .row
+              .col-sm-6.col-sm-push-6.col-xs-12
+                hr.section-heading-spacer              
+                .clearfix          
+                h2.section-heading About Me             
+                p.lead
+                  | I am from San Francisco, CA and I spend my days engineering large corporate softwares. I studied at the University of California, Irvine where I majored in Computer Science and Engineering. I specialize in client-side web applications development, primarily with a JavaScript stack. Although JavaScript is my weapon of choice, I have an incredible zest for software engineering technologies and have a proven track record for being able to learn quickly. My primary focus is to build modular, scalable and maintainable code that promotes a positive user experience.
+             
+              .col-sm-6.col-sm-pull-6.col-xs-12.img-container
+                img.img-responsive(src='public/images/about.jpg', alt='')
+
+    //- Portfolio
+    .portfolio
+        .container
+            .row
+              .col-lg-12.text-center
+                hr.section-heading-spacer               
+                .clearfix            
+                h2.section-heading Featured Projects
+
+                // begin projects
+                .row
+                  div(style='display: inline-block;')
+                    a(href='http://chefcipes.com/aphio/client/#/', target='_blank')
+                      img(src='/public/images/projects/apo_thumb.png')
+                  |                     
+                  div(style='display: inline-block;')
+                    a(href='https://eros-dev.herokuapp.com/#/', target='_blank')
+                      img(src='/public/images/projects/eros_thumb.png')
+                // end projects
+
+                br
+                br
+                    
+                p.lead
+                  | To view a complete list of my projects, please see my github repository:
+                  a(href='https://github.com/hhuynhlam', target='_blank') github.com/hhuynhlam
+                  | .
+
+    //- Banner
+    .banner
+        .container
+            .row
+              .col-lg-6
+                h2 Professional Network:
+              
+              .col-xs-12.col-lg-6
+                ul.list-inline.banner-social-buttons
+                  li
+                    a.btn.btn-default.btn-lg(href='http://www.linkedin.com/pub/hai-huynhlam/28/169/670', target='_blank')
+                      i.fa.fa-linkedin.fa-fw                            
+                      span.network-name Linkedin
+
+

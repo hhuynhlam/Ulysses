@@ -1,0 +1,40 @@
+.about .img-responsive {
+    margin-top: 20px;
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* Responsive */
+@media (min-width: 768px) and (max-width: 991px) {
+    .about .section-heading {
+        margin: 10px 0 10px 0;
+    }
+
+    .about .section-heading-spacer {
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .about {
+        text-align: center;
+    }
+
+    .about .img-responsive {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .about .section-heading-spacer {
+        float: none;
+    }
+
+    .about .img-container {
+        height: calc(50vw);
+        overflow: hidden;
+    }
+}

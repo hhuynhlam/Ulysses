@@ -13,7 +13,7 @@ var AppViewModel = function () {
 var app = sammy('#MainView');
 
 // routes
-import devRouter from 'dev.router'; devRouter(app);
+import homeRouter from 'home.router'; homeRouter(app);
 
 // // 404 Error
 app.notFound = function () {

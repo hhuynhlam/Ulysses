@@ -1,0 +1,126 @@
+/*** Style Guide 
+
+#392F54 : Dark Purple (e.g. Contact Me)
+#7E40B6 : Light Purple (e.g. Global Links)
+
+***/
+
+/***  Global  ***/
+a:focus {
+    outline: 5px auto #392F54;
+}
+
+body, html {
+    width: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+h3 {
+    margin: 20px 0;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-text .section-heading-spacer { 
+    float: none;
+}
+
+.success {
+    color: green;
+    background-color: #FFF;
+    border: 3px solid green;
+    margin-top: 20px;
+}
+
+.error {
+    color: red;
+    background-color: #FFF;
+    border: 3px solid red;
+    margin-top: 20px;
+}
+
+.categories span.anchor:not(:last-child):after {
+    content: '|';
+    color: #777;
+    margin-left: 20px;
+}
+
+.categories a {
+    padding-left: 20px;
+}
+
+.content-section-a {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+}
+
+.content-section-b {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 50px 0;
+}
+
+#Home > div {
+
+    padding: 50px 0;
+
+    &:nth-child(even) { 
+        border-top: 1px solid #e7e7e7;
+        border-bottom: 1px solid #e7e7e7;
+    }
+
+    &:nth-child(odd) { background-color: #f8f8f8; }
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    border-top: 3px solid #e7e7e7;
+    width: 200px;
+    float: left;
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.splash {
+    text-align: center;
+    margin: 40vh 0 0 0;
+}
+.splash .fa-spinner {
+    text-align: center;
+    display: inline-block;
+    font-size: 5em;
+}
+
+/* Responsive */
+@media (min-width: 768px) and (max-width: 991px) {
+    .lead { font-size: 15px !important; }
+}
