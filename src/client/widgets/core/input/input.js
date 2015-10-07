@@ -1,26 +1,24 @@
 'use strict';
 
-define(function (require) {
-    var $ = require('jquery');
-    var ko = require('knockout');
-    var sandbox = require('sandbox');
+import $ from 'jquery';
+import ko from 'knockout';
+import sandbox from 'sandbox';
 
-    var InputTemplate = require('text!widgets/core/input/input.html');
-    var InputViewModel = require('input.viewmodel');
+import InputViewModel from './input.viewmodel';
+import InputTemplate from 'widgets/core/input/input.html!text';
 
-    var inputViewModel = {
-        
-        create: function (options) {
-            var $selector = $('#' + options.id),
-                _viewmodel = new InputViewModel(options);
-
-            $selector.html( sandbox.util.template(InputTemplate) );
-            ko.applyBindings(_viewmodel, $selector[0]);
-            
-            _viewmodel.init();
-        }
+var inputViewModel = {
     
-    };
+    create: function (options) {
+        var $selector = $('#' + options.id),
+            _viewmodel = new InputViewModel(options);
 
-    return inputViewModel;
-});
+        $selector.html( sandbox.util.template(InputTemplate) );
+        ko.applyBindings(_viewmodel, $selector[0]);
+    
+        _viewmodel.init();
+    }
+
+};
+
+export default inputViewModel;

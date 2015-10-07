@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Set path for static resources
-app.use( express.static(path.join(__dirname, 'public')) );
+// app.use( express.static(path.join(__dirname, 'public')) );
 app.use( express.static(path.resolve(process.env.PWD, 'src/client')) );
 
 app.use('/', routes);

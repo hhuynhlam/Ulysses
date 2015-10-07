@@ -1,19 +1,20 @@
 'use strict';
 
-define(function (require) {
-    var $ = require('jquery');
-    var sandbox = require('sandbox');
-    var msg = sandbox.msg;
-    var _ = sandbox.util;
+import $ from 'jquery';
+import sandbox from 'sandbox';
 
-    var BaseWidgetViewModel = function (options) {
+var msg = sandbox.msg;
+var _ = sandbox.util;
+
+class BaseWidgetViewModel {
+    constructor (options) {
         this.contextId = (options) ? options.id : undefined;
         this.$selector = (options) ? $('#' + options.id) : undefined;
 
         this.subscriptions = [];
-    };
+    }
 
-    BaseWidgetViewModel.prototype.setupPublications = function setupPublications(supportedEvents) {
+    setupPublications(supportedEvents) {
         var _this = this;
         
         _.forOwn(_this.options, function (val, key) {
@@ -32,9 +33,9 @@ define(function (require) {
                 _this.options[key] = _on;
             }
         });
-    };
+    }
 
-    BaseWidgetViewModel.prototype.setupSubscriptions = function setupSubscriptions() {
+    setupSubscriptions() {
         var _this = this,
             _dataBoundOption, _onDataBound;
 
@@ -72,7 +73,7 @@ define(function (require) {
             }
             
         }
-    };
+    }
+}
 
-    return BaseWidgetViewModel;
-});
+export default BaseWidgetViewModel;
