@@ -1,10 +1,10 @@
 'use strict';
 
-import * as ko from 'knockout';
-import * as sandbox from 'sandbox';
-import 'bootstrap';
-
-System.import('sammy').then(function(sammy) {
+define(function (require) {
+    var ko = require('knockout');
+    var sammy = require('sammy');
+    var sandbox = require('sandbox');
+    require('bootstrap');
 
     var AppViewModel = function () {
         this.isReady = ko.observable(false);
@@ -42,5 +42,5 @@ System.import('sammy').then(function(sammy) {
         ko.applyBindings(new AppViewModel(), document.getElementById('MainView'));
         app.run(); 
     });
-    
+
 });
