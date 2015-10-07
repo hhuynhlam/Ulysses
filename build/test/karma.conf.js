@@ -29,7 +29,7 @@ module.exports = function(config) {
     systemjs: {
 
       // Path to your SystemJS configuration file 
-      configFile: './core/jspm_config.js',
+      configFile: './core/system.config.js',
    
       // Patterns for files that you want Karma to make available, but not loaded until a module requests them. eg. Third-party libraries. 
       serveFiles: [
