@@ -1,22 +1,21 @@
 'use strict';
 
-define(function (require) {
-    var ko = require('knockout');
-    require('knockout-postbox');
 
-    var msg = {
-        subscribe: ko.postbox.subscribe,
-        publish: ko.postbox.publish,
+import ko from 'knockout';
+import 'knockout-postbox';
 
-        dispose: function () {
-            var subs = Array.prototype.slice.call(arguments);
-            subs.forEach(function (sub) {
-                sub.dispose();
-            });
-        },
+var msg = {
+    subscribe: ko.postbox.subscribe,
+    publish: ko.postbox.publish,
 
-        reset: ko.postbox.reset
-    };
+    dispose: function () {
+        var subs = Array.prototype.slice.call(arguments);
+        subs.forEach(function (sub) {
+            sub.dispose();
+        });
+    },
 
-    return msg;
-});
+    reset: ko.postbox.reset
+};
+
+export default msg;
