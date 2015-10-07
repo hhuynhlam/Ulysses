@@ -1,25 +1,23 @@
 'use strict';
 
-define(function (require) {
-    var dropdownWidget = require('dropdown.widget');
-    var _mock = require('json!screens/_dev/_styleguide/styleguide.kendo-mock.json');
+import dropdownWidget from 'dropdown.widget';
+import _mock from './styleguide.kendo-mock.json!json';
 
-    var StyleGuideViewModel = function () {
-        
-    };
+class StyleGuideViewModel {
+    constructor() {}
 
-    StyleGuideViewModel.prototype.init = function init () {
-        this.kendoDropDown();
-    };
+    init() {
+        this._kendoDropDown();
+    }
 
-    StyleGuideViewModel.prototype.kendoDropDown = function kendoDropDown() {
+    _kendoDropDown() {
         dropdownWidget.create({
-            id: 'KendoDropDownList ',
+            id: 'KendoDropDownList',
             dataTextField: 'name',
             dataValueField: 'id',
             dataSource: _mock
         });
-    };
+    }
+}
 
-    return StyleGuideViewModel;
-});
+export default StyleGuideViewModel;

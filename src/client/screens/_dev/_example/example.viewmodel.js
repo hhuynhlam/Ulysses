@@ -1,15 +1,13 @@
 'use strict';
 
-define(function (require) {
-    var dropdownWidget = require('dropdown.widget');
-    var inputWidget = require('input.widget');
+import dropdownWidget from 'dropdown.widget';
+import inputWidget from 'input.widget';
 
-    var ExampleViewModel = function () {
-        
-    };
+class ExampleViewModel {
+    constructor() {}   
 
-    ExampleViewModel.prototype.init = function init () {
-        
+    init() {
+
         dropdownWidget.create({
             id: 'SampleDropDown',
             dataTextField: 'name',
@@ -34,8 +32,8 @@ define(function (require) {
             publish: ['InputTopicA'],
             subscribe: ['InputTopicB']
         });
-    
-    };
 
-    return ExampleViewModel;
-});
+    }
+}
+
+export default ExampleViewModel;
