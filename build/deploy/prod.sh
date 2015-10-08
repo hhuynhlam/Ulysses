@@ -51,6 +51,7 @@ ssh -t -t $USER@$HOST << 'EOF'
 
     # restart
     pid=`ps -ef | grep -i node | grep haihuynhlam.com | awk '{ print $2}'`
+    sudo echo $pid
     sudo kill $pid
 
     exit 0
