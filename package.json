@@ -7,6 +7,9 @@
     "start": "node ./src/server/bin/www",
     "test": "gulp test"
   },
+  "engines": {
+    "node":"0.12.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hhuynhlam/Ulysses"
