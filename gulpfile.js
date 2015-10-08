@@ -107,6 +107,7 @@ gulp.task('server', ['less', 'jade'], shell.task([ 'npm start' ]));
 // Primary Tasks
 //======================================
 gulp.task('default', ['jshint', 'less', 'jade']);
+gulp.task('build', ['less', 'jade']);
 gulp.task('test', ['jshint', 'karma']);
 
 
