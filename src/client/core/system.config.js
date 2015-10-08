@@ -15,6 +15,7 @@ System.config({
     "input.widget"         : "widgets/core/input/input",
     
     // Core
+    'custom-bindings': 'core/custom-bindings',
     "sandbox": "core/sandbox/sandbox",
     
     // Vendor

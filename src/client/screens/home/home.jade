@@ -8,7 +8,7 @@ section#Home.container-fluid
                   span.icon-bar           
                   span.icon-bar
              
-                a#contact-button.navbar-brand(data-bind='') Contact Me
+                a#contact-button.navbar-brand(data-bind='click: toggleContact;') Contact Me
 
             .collapse.navbar-collapse.navbar-right.navbar-ex1-collapse
                 ul.nav.navbar-nav
@@ -21,10 +21,10 @@ section#Home.container-fluid
                     li
                         a(href='http://blog.haihuynhlam.com' target="_blank") Blog
 
-            form#contact-form(role='form' style="display: none")
+            form#contact-form(role='form' style="display: none" data-bind="slideVisible: showContact;")
                 .form-group.contact-info
                     span.glyphicon.glyphicon-pencil
-                        a(href='mailto:hhuynhlam@gmail.com') hhuynhlam@gmail.com
+                        a(href='mailto:hhuynhlam@gmail.com') &nbsp; hhuynhlam@gmail.com
 
 
     //- Jumbotron
