@@ -45,9 +45,7 @@ ssh -t -t $USER@$HOST << 'EOF'
     sudo npm install --production
 
     sudo svc -d /service/haihuynhlam.com
-    # sudo svc -u /service/haihuynhlam.com
-    
-    nohup npm start &
+    sudo svc -u /service/haihuynhlam.com
 
     exit 0
 
