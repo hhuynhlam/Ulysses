@@ -1,13 +1,11 @@
 'use strict';
 
 class HomeViewModel {
-    constructor() {
 
-    }   
+    constructor() {}
 
-    init() {
+    init() {}
 
-    }
 }
 
 export default HomeViewModel;

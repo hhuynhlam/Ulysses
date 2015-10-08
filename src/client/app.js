@@ -5,9 +5,31 @@ import sammy from 'sammy';
 import sandbox from 'sandbox';
 import 'bootstrap';
 
-var AppViewModel = function () {
-    this.isReady = ko.observable(false);
-};
+class AppViewModel {
+    constructor() {
+        this.isReady = ko.observable(false);
+        
+        this.init();
+    }
+
+    init() {
+        var bgImg, aboutImg, bannerImg;
+
+        bgImg = new Image();
+        bgImg.src = '/public/images/intro-bg.jpg';
+
+        aboutImg = new Image();
+        aboutImg.src = '/public/images/about.jpg';
+
+        bannerImg = new Image();
+        bannerImg.src = '/public/images/banner-bg.jpg';
+
+        // Set app to ready
+        $(bgImg, aboutImg, bannerImg).load( () =>  {
+            this.isReady(true);
+        });
+    }
+}
 
 // define a new Sammy.Application bound to the #MainView DOM
 var app = sammy('#MainView');
@@ -38,7 +60,7 @@ app.swap = function(content, callback) {
 
 // run app
 $(function() { 
-    ko.applyBindings(new AppViewModel(), document.getElementById('MainView'));
+    ko.applyBindings(new AppViewModel(), document.body);
     app.run(); 
 });
 
