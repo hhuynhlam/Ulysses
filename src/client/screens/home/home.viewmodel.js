@@ -1,10 +1,17 @@
 'use strict';
 
+import ko from 'knockout';
+import 'custom-bindings';
+
 class HomeViewModel {
 
-    constructor() {}
+    constructor() {
+        this.showContact = ko.observable(false);
+    }
 
     init() {}
+
+    toggleContact() { this.showContact( !this.showContact() ); }
 
 }
 
