@@ -87,7 +87,7 @@ a:hover {
 
     &:nth-child(even) { 
         border-top: 1px solid #e7e7e7;
-        border-bottom: 1px solid #e7e7e7;
+        &:not(:last-child) { border-bottom: 1px solid #e7e7e7; }
     }
 
     &:nth-child(odd) { background-color: #f8f8f8; }

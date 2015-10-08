@@ -12,6 +12,7 @@
     <!-- Styles -->
     <!-- @TODO: compile src sass instead -->
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/components-font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="vendor/kendo/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="vendor/kendo/styles/kendo.bootstrap.min.css" />
     <link rel="stylesheet" href="styles/global.css" />
@@ -21,9 +22,13 @@
   <body>
 
     <!-- Start App Content -->
-    <section id="MainView">
+    <section id="MainView" data-bind="visible: isReady" style="display": none;>
     </section>
     <!-- End App Content -->
+
+    <div class="splash" data-bind="visible: !isReady()">
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
 
     <script src="vendor/system.js/dist/system.js"></script>
     <script src="core/system.config.js"></script>

@@ -26,6 +26,7 @@
     "globals"       : {       // Extra globals.
         "define"    : true,
         "document"  :true,
+        "Image"     : true,
         "require"   : true,
         "window"    : true,
         "System"    : true
