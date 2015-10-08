@@ -22,11 +22,11 @@
   <body>
 
     <!-- Start App Content -->
-    <section id="MainView" data-bind="visible: isReady" style="display": none;>
+    <section id="MainView" data-bind="fadeVisible: isReady" style="display": none;>
     </section>
     <!-- End App Content -->
 
-    <div class="splash" data-bind="visible: !isReady()">
+    <div class="splash" data-bind="fadeVisible: !isReady()">
         <i class="fa fa-spinner fa-spin"></i>
     </div>
 
