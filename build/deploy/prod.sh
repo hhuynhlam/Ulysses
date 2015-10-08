@@ -50,7 +50,7 @@ ssh -t -t $USER@$HOST << 'EOF'
     sudo npm install --production
 
     # restart
-    killall node
+    sudo killall node
 
     exit 0
 
