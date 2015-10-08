@@ -28,29 +28,35 @@ scp -C package.tar.gz $USER@$HOST:~/
 # host commands
 ssh -t -t $USER@$HOST << 'EOF'
     
+    # create backup
     sudo rm -rf haihuynhlam.com.bak
     sudo mv haihuynhlam.com haihuynhlam.com.bak
 
+    # create new version
     sudo mkdir haihuynhlam.com
     sudo mv package.tar.gz ./haihuynhlam.com
     cd haihuynhlam.com
     
+    # unpackaged
     sudo gunzip package.tar.gz
     sudo tar -xvf package.tar
     sudo rm package.tar
 
+    # cleanup
     sudo mv ./_dist/* ./
     sudo rm -rf ./_dist
 
+    # install
     sudo npm install --production
 
-    sudo svc -d /service/haihuynhlam.com
-    sudo svc -u /service/haihuynhlam.com
+    # restart
+    pid=`ps -ef | grep -i node | grep haihuynhlam.com | awk '{ print $2}'`
+    sudo kill $pid
 
     exit 0
 
 EOF
 
-# # cleanup
+# cleanup
 rm -rf _dist
 rm package.tar.gz
