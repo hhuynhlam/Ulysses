@@ -50,9 +50,7 @@ ssh -t -t $USER@$HOST << 'EOF'
     sudo npm install --production
 
     # restart
-    pid=`ps -ef | grep -i node | grep haihuynhlam.com | awk '{ print $$2}'`
-    sudo echo $pid
-    sudo kill $pid
+    killall node
 
     exit 0
 
