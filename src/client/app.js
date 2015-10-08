@@ -4,11 +4,11 @@ import ko from 'knockout';
 import sammy from 'sammy';
 import sandbox from 'sandbox';
 import 'bootstrap';
+import 'custom-bindings';
 
 class AppViewModel {
     constructor() {
         this.isReady = ko.observable(false);
-        
         this.init();
     }
 
