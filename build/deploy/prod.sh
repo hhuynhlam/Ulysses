@@ -50,10 +50,10 @@ ssh -t -t $USER@$HOST << 'EOF'
     sudo npm install --production
 
     # restart
-    sudo lsof -i:9000 -t | xargs kill
+    lsof -i:9000 -t | xargs kill
 
     cd ..
-    sudo PORT=9000 node haihuynhlam.com/src/server/bin/www > haihuynhlam.logs
+    PORT=9000 node haihuynhlam.com/src/server/bin/www > haihuynhlam.logs &
 
     exit 0
 
