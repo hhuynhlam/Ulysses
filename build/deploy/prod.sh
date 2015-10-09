@@ -50,11 +50,10 @@ ssh -t -t $USER@$HOST << 'EOF'
     sudo npm install --production
 
     # restart
-    pid=`ps -eo pid,command | grep 'node haihuynhlam' | grep -v 'grep' | awk '{ print $$1 }'`
-    sudo kill pid
+    sudo ps -eo pid,command | grep 'node haihuynhlam' | grep -v 'grep' | awk '{ print $$1 }' | xargs kill
 
     cd ..
-    PORT=9000 node haihuynhlam.com/src/server/bin/www
+    sudo PORT=9000 node haihuynhlam.com/src/server/bin/www > logs/haihuynhlam.txt
 
     exit 0
 
