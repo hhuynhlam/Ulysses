@@ -54,7 +54,7 @@ ssh -t -t $USER@$HOST << 'EOF'
     sudo kill pid
 
     cd ..
-    PORT=9000 node haihuynhlam/src/server/bin/www
+    PORT=9000 node haihuynhlam.com/src/server/bin/www
 
     exit 0
 
