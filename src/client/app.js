@@ -1,10 +1,27 @@
 'use strict';
 
+import $ from 'jquery';
 import ko from 'knockout';
 import sammy from 'sammy';
 import sandbox from 'sandbox';
 import 'bootstrap';
 
+//======================================
+// Navbar
+//======================================
+import NavBarViewModel from 'widgets/core/navbar/navbar.viewmodel';
+System.import('widgets/core/navbar/navbar.html!text').then(function (template) {
+    var viewModel = new NavBarViewModel();
+
+    $('#Navbar').html(template);
+    ko.applyBindings(viewModel, document.getElementById('Navbar'));
+    viewModel.init();
+});
+
+
+//======================================
+// Main App
+//======================================
 var AppViewModel = function () {
     this.isReady = ko.observable(false);
 };
@@ -14,6 +31,7 @@ var app = sammy('#MainView');
 
 // routes
 import devRouter from 'dev.router'; devRouter(app);
+import loginRouter from 'login.router'; loginRouter(app);
 
 // // 404 Error
 app.notFound = function () {

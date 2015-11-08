@@ -1,0 +1,165 @@
+// Navigation
+.navbar.navbar-inverse
+  .navbar-header
+    // Toggle Button
+    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    
+    // Site Name
+    a.navbar-brand.hidden-xs(href='#') Alpha Phi Omega &nbsp;
+      span Rho Rho Chapter
+    a.navbar-brand.visible-xs-inline(href='#') APO &nbsp;
+      span PP
+  
+  // Collapsible
+  .navbar-collapse.collapse.navbar-responsive-collapse
+    
+    // Main Links
+    ul.nav.navbar-nav
+      li.dropdown
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          | About
+          b.caret
+        ul.dropdown-menu
+          //- li
+          //-   a(href='#/about/links') Affiliates
+          //- li
+          //-   a(href='#/about/contact') Contacts
+          //- li
+          //-   a(href='#/about/history') History 
+          li
+            a(href='#/about') Meetings
+          //- li
+          //-   a(href='#/about/rush') Rushing
+      li.dropdown(data-bind='visible: loggedIn')
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          | Events 
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href='#/event/calendar') Calendar
+          li
+            a(href='#/event') Events
+      //- li.dropdown(data-bind='visible: loggedIn')
+      //-   a.dropdown-toggle(href='#', data-toggle='dropdown')
+      //-     | Media 
+      //-     b.caret
+      //-   ul.dropdown-menu
+      //-     li
+      //-       a(href='#') Newsletters
+      //-     li
+      //-       a(href='#') Videos
+      li.dropdown(data-bind='visible: loggedIn')
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          | Members 
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href='#/member/docs') Documents
+          //- li
+          //-   a(href='#') Faces
+          //- li
+          //-   a(href='#') FAQ
+          //- li
+          //-   a(href='#') Finance
+          li
+            a(href='#/member/roster') Roster
+    
+    // Right Links
+    ul.nav.navbar-nav.navbar-right
+      
+      //- li.dropdown
+      //-   a.dropdown-toggle(href='#', data-toggle='dropdown')
+      //-     | About
+      //-     b.caret
+      //-   ul.dropdown-menu
+      //-     li
+      //-       a(href='#/about/links') Affiliates
+      //-     li
+      //-       a(href='#/about/contact') Contacts
+      //-     li
+      //-       a(href='#/about/history') History 
+      //-     li
+      //-       a(href='#/about') Meetings
+      //-     li
+      //-       a(href='#/about/rush') Rushing
+      //- li.dropdown(data-bind='visible: loggedIn')
+      //-   a.dropdown-toggle(href='#', data-toggle='dropdown')
+      //-     | Events 
+      //-     b.caret
+      //-   ul.dropdown-menu
+      //-     li
+      //-       a(href='#/event/calendar') Calendar
+      //-     li
+      //-       a(href='#/event') Events
+      //- li.dropdown(data-bind='visible: loggedIn')
+      //-   a.dropdown-toggle(href='#', data-toggle='dropdown')
+      //-     | Media 
+      //-     b.caret
+      //-   ul.dropdown-menu
+      //-     li
+      //-       a(href='#') Newsletters
+      //-     li
+      //-       a(href='#') Videos
+      //- li.dropdown(data-bind='visible: loggedIn')
+      //-   a.dropdown-toggle(href='#', data-toggle='dropdown')
+      //-     | Members 
+      //-     b.caret
+      //-   ul.dropdown-menu
+      //-     li
+      //-       a(href='#') Documents
+      //-     li
+      //-       a(href='#') Faces
+      //-     li
+      //-       a(href='#') FAQ
+      //-     li
+      //-       a(href='#') Finance
+      //-     li
+      //-       a(href='#/member/roster') Roster
+      
+      li#Help
+        a.navbar-icon(data-bind="visible: showHelp, click: help") Help
+
+      li.dropdown(data-bind='visible: loggedIn')
+        a.border.dropdown-toggle(href='#', data-toggle='dropdown')
+          span(data-bind='text: currentUser.FirstName')
+          b.caret
+        
+        ul.dropdown-menu
+          li
+            a
+              span Service: &nbsp;
+              span(data-bind='text: currentUser.TotalService')
+              span &nbsp; hrs
+          li
+            a
+              span Fellowship: &nbsp;
+              span(data-bind='text: currentUser.TotalFellowship')
+              span &nbsp; hrs
+          
+          li.divider
+          li
+            //- a(href='#/dashboard') Dashboard
+          li
+            a(href='#/profile') Profile
+          li
+            a(href='#/email') Send Email
+
+          li.divider
+          li(data-bind='visible: loggedIn, click: logout')
+            a Logout
+
+      li(data-bind='visible: !loggedIn')
+        a.border(href='#/login') Login
+
+#LogoutModal
+#AppAlerts.col-sm-6.col-sm-offset-3.text-center(style="margin-top: -20px")
+
+// Alerts
+//
+  <div id="welcome" class="alert alert-dismissable alert-info pop-notice timed" data-bind="visible: loggedIn">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  Welcome back, <span data-bind="text: name"></span>
+  </div>
