@@ -11,10 +11,11 @@ import 'bootstrap';
 //======================================
 import NavBarViewModel from 'widgets/core/navbar/navbar.viewmodel';
 System.import('widgets/core/navbar/navbar.html!text').then(function (template) {
-    var viewModel = new NavBarViewModel();
+    var viewModel = new NavBarViewModel(),
+        $navbar = $('#Navbar');
 
-    $('#Navbar').html(template);
-    ko.applyBindings(viewModel, document.getElementById('Navbar'));
+    $navbar.html(template);
+    ko.applyBindings(viewModel, $navbar[0]);
     viewModel.init();
 });
 

@@ -1,7 +1,7 @@
 'use strict';
 
-import dropdownWidget from 'dropdown.widget';
-import inputWidget from 'input.widget';
+// import dropdownWidget from 'dropdown.widget';
+// import inputWidget from 'input.widget';
 
 class LoginViewModel {
     constructor() {}   
