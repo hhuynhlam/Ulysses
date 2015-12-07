@@ -10,5 +10,5 @@ ssh -t -t hhuynhlam@173.230.154.82 << 'EOF'
     git pull
     node node_modules/gulp/bin/gulp.js jade
     node node_modules/gulp/bin/gulp.js less
-
+    exit 0
 EOF
