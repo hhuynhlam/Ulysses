@@ -1,64 +1,14 @@
-# check for params
-if [ -z "$HOST" ];
-then
-    echo "error: HOST not defined"
-    exit 1
-fi
-if [ -z "$USER" ];
-then
-    echo "error: USER not defined"
-    exit 1
-fi
-
-# clean and build local_dist
-pushd ../..
-gulp build
-
-# create package
-mkdir _dist
-cp -a ./src ./_dist/src
-cp package.json _dist/package.json
-
-tar -zcf package.tar ./_dist 
-gzip package.tar 
-
-# copy to host
-scp -C package.tar.gz $USER@$HOST:~/
 
 # host commands
-ssh -t -t $USER@$HOST << 'EOF'
+ssh -t -t hhuynhlam@173.230.154.82 << 'EOF'
     
-    # create backup
-    sudo rm -rf haihuynhlam.com.bak
-    sudo mv haihuynhlam.com haihuynhlam.com.bak
-
-    # create new version
-    sudo mkdir haihuynhlam.com
-    sudo mv package.tar.gz ./haihuynhlam.com
-    cd haihuynhlam.com
+    pushd haihuynhlam
     
-    # unpackaged
-    sudo gunzip package.tar.gz
-    sudo tar -xvf package.tar
-    sudo rm package.tar
-
-    # cleanup
-    sudo mv ./_dist/* ./
-    sudo rm -rf ./_dist
-
-    # install
-    sudo npm install --production
-
-    # restart
-    lsof -i:9000 -t | xargs kill
-
-    cd ..
-    PORT=9000 node haihuynhlam.com/src/server/bin/www > haihuynhlam.logs &
-
-    exit 0
+    nvm use v4.2.2
+    git add --all
+    git reset --hard origin/portfolio
+    git pull
+    node node_modules/gulp/bin/gulp.js jade
+    node node_modules/gulp/bin/gulp.js less
 
 EOF
-
-# cleanup
-rm -rf _dist
-rm package.tar.gz
